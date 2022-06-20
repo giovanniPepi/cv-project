@@ -34,6 +34,9 @@ class Personal extends Component {
           <input type="tel" id="linkedin" placeholder="linkedin.com/in/user" />
           <button id="editlinkedin">Edit </button>
         </div>
+        <div>
+          <button>Save</button>
+        </div>
       </fieldset>
     );
   }
