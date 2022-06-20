@@ -1,4 +1,3 @@
-import style from "./styles/App.css";
 import { Component } from "react";
 import Personal from "./components/Personal";
 import Skills from "./components/Skills";
