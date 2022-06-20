@@ -10,10 +10,14 @@ class App extends Component {
     return (
       <form className="App" id="mainForm">
         <fieldset>
+          <h2>CV Generator</h2>
+          <h3>General Info</h3>
           <Personal />
           <Skills />
           <Experience />
           <Education />
+          <button>Preview</button>
+          <button>Print</button>
         </fieldset>
       </form>
     );
