@@ -12,8 +12,11 @@ class App extends Component {
           <h2>CV Generator</h2>
           <h3>General Info</h3>
           <Personal />
+          <h3>Skills</h3>
           <Skills />
+          <h3>Experience</h3>
           <Experience />
+          <h3>Education</h3>
           <Education />
           <button>Preview</button>
           <button>Print</button>
