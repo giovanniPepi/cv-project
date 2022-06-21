@@ -35,7 +35,7 @@ class Skills extends Component {
     }
 
     return (
-      <form className="personalForm" action="" onSubmit={this.handleSubmit}>
+      <form className="skillForm" action="" onSubmit={this.handleSubmit}>
         <div className="innerFormDiv">
           <label htmlFor="skill">
             <p>Skill</p>

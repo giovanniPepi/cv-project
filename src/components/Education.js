@@ -1,32 +1,95 @@
 import React, { Component } from "react";
 
 class Education extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      editMode: true,
+      school: "",
+      position: "",
+      from: "",
+      to: "",
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.setState((prevState) => {
+      return { editMode: !prevState.editMode };
+    });
+  }
+
   render() {
+    const { editMode, school, position, from, to } = this.state;
+    const { id, handleDelete } = this.props;
+
+    if (!editMode) {
+      // print logic
+    }
+
     return (
-      <fieldset>
-        <button>Add</button>
-        <div>
-          <label htmlFor="school">School</label>
-          <input type="text" placeholder="School name" />
+      <form className="educationForm" action="" onSubmit={this.handleSubmit}>
+        <div className="innerFormDiv">
+          <label htmlFor="school">
+            <p>school</p>
+            <input
+              type="text"
+              name="school"
+              value={school}
+              onChange={this.handleChange}
+              required
+            />
+          </label>
+
+          <label htmlFor="position">
+            <p>Description</p>
+            <input
+              type="text"
+              name="position"
+              value={position}
+              onChange={this.handleChange}
+            />
+          </label>
         </div>
-        <div>
-          <label htmlFor="position">Course</label>
-          <input type="text" placeholder="Computer Science" />
+
+        <div className="innerFormDiv">
+          <label htmlFor="from">
+            <p>From</p>
+            <input
+              type="date"
+              name="from"
+              value={from}
+              onChange={this.handleChange}
+            />
+          </label>
+
+          <label htmlFor="to">
+            <p>To</p>
+            <input
+              type="date"
+              name="to"
+              value={to}
+              onChange={this.handleChange}
+            />
+          </label>
         </div>
-        <div>
-          <label htmlFor="startDate">From</label>
-          <input type="date" placeholder="dd/mm/yyyy" id="startDate" />
-        </div>
-        <div>
-          <label htmlFor="endDate">To</label>
-          <input type="date" placeholder="dd/mm/yyyy" id="endDate" />
-        </div>
-        <div>
-          <textarea className="description"></textarea>
-        </div>
-        <button>Save</button>
-        <button>Delete</button>
-      </fieldset>
+
+        <button className="formBtn">Save</button>
+        <button
+          className="formBtn"
+          type="button"
+          onClick={() => handleDelete("educationIds", id)}
+        >
+          Delete
+        </button>
+      </form>
     );
   }
 }

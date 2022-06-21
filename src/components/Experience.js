@@ -1,32 +1,95 @@
 import React, { Component } from "react";
 
 class Experience extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      editMode: true,
+      company: "",
+      position: "",
+      from: "",
+      to: "",
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.setState((prevState) => {
+      return { editMode: !prevState.editMode };
+    });
+  }
+
   render() {
+    const { editMode, company, position, from, to } = this.state;
+    const { id, handleDelete } = this.props;
+
+    if (!editMode) {
+      // print logic
+    }
+
     return (
-      <fieldset>
-        <button>Add</button>
-        <div>
-          <label htmlFor="company">Company</label>
-          <input type="text" placeholder="company name" />
+      <form className="experienceForm" action="" onSubmit={this.handleSubmit}>
+        <div className="innerFormDiv">
+          <label htmlFor="company">
+            <p>Company</p>
+            <input
+              type="text"
+              name="company"
+              value={company}
+              onChange={this.handleChange}
+              required
+            />
+          </label>
+
+          <label htmlFor="position">
+            <p>Description</p>
+            <input
+              type="text"
+              name="position"
+              value={position}
+              onChange={this.handleChange}
+            />
+          </label>
         </div>
-        <div>
-          <label htmlFor="position">Position</label>
-          <input type="text" placeholder="Sr React Developer" />
+
+        <div className="innerFormDiv">
+          <label htmlFor="from">
+            <p>From</p>
+            <input
+              type="date"
+              name="from"
+              value={from}
+              onChange={this.handleChange}
+            />
+          </label>
+
+          <label htmlFor="to">
+            <p>To</p>
+            <input
+              type="date"
+              name="to"
+              value={to}
+              onChange={this.handleChange}
+            />
+          </label>
         </div>
-        <div>
-          <label htmlFor="startDate">From</label>
-          <input type="date" placeholder="dd/mm/yyyy" id="startDate" />
-        </div>
-        <div>
-          <label htmlFor="endDate">To</label>
-          <input type="date" placeholder="dd/mm/yyyy" id="endDate" />
-        </div>
-        <div>
-          <textarea className="description"></textarea>
-        </div>
-        <button>Save</button>
-        <button>Delete</button>
-      </fieldset>
+
+        <button className="formBtn">Save</button>
+        <button
+          className="formBtn"
+          type="button"
+          onClick={() => handleDelete("experienceIds", id)}
+        >
+          Delete
+        </button>
+      </form>
     );
   }
 }

@@ -12,8 +12,8 @@ class App extends Component {
 
     this.state = {
       skillsIds: [],
-      educationIds: [],
       experienceIds: [],
+      educationIds: [],
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -43,12 +43,21 @@ class App extends Component {
       <Skills key={id} id={id} handleDelete={this.handleDelete} />
     ));
 
+    const experiences = this.state.experienceIds.map((id) => (
+      <Experience key={id} id={id} handleDelete={this.handleDelete} />
+    ));
+
+    const educations = this.state.educationIds.map((id) => (
+      <Education key={id} id={id} handleDelete={this.handleDelete} />
+    ));
+
     return (
       <main className="App" id="mainForm">
         <section className="mainSection">
           <h2>CV Generator</h2>
           <h3 className="sectionTitle">General Info</h3>
           <Personal />
+
           <h3 className="sectionTitle">Skills</h3>
           {skills}
           <button
@@ -57,13 +66,26 @@ class App extends Component {
           >
             Add
           </button>
-          <h3>Experience</h3>
-          <Experience />
-          <h3>Education</h3>
-          <Education />
-          <button>Preview</button>
-          <button>Print</button>
+
+          <h3 className="sectionTitle">Experience</h3>
+          {experiences}
+          <button
+            className="addBtn"
+            onClick={() => this.handleClick("experienceIds")}
+          >
+            Add
+          </button>
+          <h3 className="sectionTitle">Education</h3>
+          {educations}
+          <button
+            className="addBtn"
+            onClick={() => this.handleClick("educationIds")}
+          >
+            Add
+          </button>
         </section>
+        <button>Preview</button>
+        <button>Print</button>
       </main>
     );
   }
