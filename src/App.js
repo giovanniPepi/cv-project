@@ -15,6 +15,9 @@ class App extends Component {
       educationIds: [],
       experienceIds: [],
     };
+
+    this.handleClick = this.handleClick.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   // creates a new instace of the element inside the state, which is then rendered
@@ -25,12 +28,21 @@ class App extends Component {
       };
     });
   }
-  handleDelete() {}
+
+  handleDelete(type, id) {
+    this.setState((prevState) => {
+      let filtered = prevState[type].filter((key) => key !== id);
+      return {
+        [type]: filtered,
+      };
+    });
+  }
 
   render() {
     const skills = this.state.skillsIds.map((id) => (
       <Skills key={id} id={id} handleDelete={this.handleDelete} />
     ));
+
     return (
       <main className="App" id="mainForm">
         <section className="mainSection">

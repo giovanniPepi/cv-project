@@ -60,8 +60,8 @@ class Skills extends Component {
         </div>
         <button className="formBtn">Save</button>
         <button
-          className="formBtn skillsBtn"
-          type="submit"
+          className="formBtn"
+          type="button"
           onClick={() => handleDelete("skillsIds", id)}
         >
           Delete
