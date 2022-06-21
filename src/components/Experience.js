@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Textfield from "./Textfield";
 
 class Experience extends Component {
   constructor(props) {
@@ -31,7 +32,15 @@ class Experience extends Component {
     const { id, handleDelete } = this.props;
 
     if (!editMode) {
-      // print logic
+      return (
+        <Textfield
+          company={company}
+          position={position}
+          from={from}
+          to={to}
+          handleEdit={this.handleSubmit}
+        />
+      );
     }
 
     return (
@@ -81,7 +90,9 @@ class Experience extends Component {
           </label>
         </div>
 
-        <button className="formBtn">Save</button>
+        <button className="formBtn experienceBtn" type="submit">
+          Save
+        </button>
         <button
           className="formBtn"
           type="button"

@@ -45,7 +45,7 @@ class Personal extends Component {
           phone={phone}
           github={github}
           linkedin={linkedin}
-          handleEdit={""}
+          handleEdit={this.handleSubmit}
         />
       );
     }

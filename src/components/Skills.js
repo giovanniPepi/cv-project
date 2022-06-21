@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Textfield from "./Textfield";
 
 class Skills extends Component {
   constructor(props) {
@@ -30,8 +31,15 @@ class Skills extends Component {
     const { editMode, skill, description } = this.state; //destructuring
     const { id, handleDelete } = this.props; // receives from App
 
+    // text returned when input is saved
     if (!editMode) {
-      // print logic
+      return (
+        <Textfield
+          skill={skill}
+          description={description}
+          handleEdit={this.handleSubmit}
+        />
+      );
     }
 
     return (
@@ -58,7 +66,9 @@ class Skills extends Component {
             />
           </label>
         </div>
-        <button className="formBtn">Save</button>
+        <button className="formBtn skillsBtn" type="submit">
+          Save
+        </button>
         <button
           className="formBtn"
           type="button"

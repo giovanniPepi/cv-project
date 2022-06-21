@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import Textfield from "./Textfield";
 
 class Education extends Component {
   constructor(props) {
     super(props);
     this.state = {
       editMode: true,
-      school: "",
-      position: "",
+      title: "",
+      institution: "",
       from: "",
       to: "",
     };
@@ -27,33 +28,41 @@ class Education extends Component {
   }
 
   render() {
-    const { editMode, school, position, from, to } = this.state;
+    const { editMode, title, institution, from, to } = this.state;
     const { id, handleDelete } = this.props;
 
     if (!editMode) {
-      // print logic
+      return (
+        <Textfield
+          title={title}
+          institution={institution}
+          from={from}
+          to={to}
+          handleEdit={this.handleSubmit}
+        />
+      );
     }
 
     return (
       <form className="educationForm" action="" onSubmit={this.handleSubmit}>
         <div className="innerFormDiv">
-          <label htmlFor="school">
-            <p>school</p>
+          <label htmlFor="title">
+            <p>Degree</p>
             <input
               type="text"
-              name="school"
-              value={school}
+              name="title"
+              value={title}
               onChange={this.handleChange}
               required
             />
           </label>
 
-          <label htmlFor="position">
-            <p>Description</p>
+          <label htmlFor="institution">
+            <p>Institution</p>
             <input
               type="text"
-              name="position"
-              value={position}
+              name="institution"
+              value={institution}
               onChange={this.handleChange}
             />
           </label>
