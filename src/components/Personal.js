@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Textfield from "./Textfield";
+import style from "../styles/Personal.css";
 
 class Personal extends Component {
   constructor(props) {
@@ -13,11 +14,26 @@ class Personal extends Component {
       github: "",
       linkedin: "",
     };
-  }
-  render() {
-    // destructuring the state
 
-    const { editMode, firstName, lastName, email, phone, github, linkedin } = this.state
+    // binds this
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(e) {
+    const { name, value } = e.target; // enable editing, updates state to reflect input
+    this.setState({ [name]: value });
+  }
+  handleSubmit(e) {
+    e.preventDefault(); // prevents page reloading
+    this.setState((prevState) => {
+      return { editMode: !prevState.editMode }; // inverts the prevState
+    });
+  }
+
+  render() {
+    const { editMode, firstName, lastName, email, phone, github, linkedin } =
+      this.state; // destructuring the state
 
     // constructed when edit mode off
     if (!editMode) {
@@ -29,56 +45,92 @@ class Personal extends Component {
           phone={phone}
           github={github}
           linkedin={linkedin}
-          handleEdit={''}
-          />       
-      )
+          handleEdit={""}
+        />
+      );
     }
-    
+
     // constructed when edit mode is on
     return (
-         return (
-      <fieldset className="textfield">
-        <div>
-          <label htmlFor="firstName">First Name: </label>
-          {props.firstName}
-          <input type="text" id="firstName" />
-          <button id="editFirstName">Edit </button>
+      <form className="personalForm" action="" onSubmit={this.handleSubmit}>
+        <div className="innerFormDiv">
+          <label htmlFor="firstName">
+            <p>First Name:</p>
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              value={firstName}
+              onChange={this.handleChange}
+              required
+            />
+          </label>
+
+          <label htmlFor="lastName">
+            <p>Last Name</p>
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              value={lastName}
+              onChange={this.handleChange}
+              required
+            />
+          </label>
+
+          <label htmlFor="email">
+            <p>Email</p>
+            <input
+              type="email"
+              name="email"
+              placeholder="example@domain.com"
+              value={email}
+              onChange={this.handleChange}
+              required
+            />
+          </label>
         </div>
-        <div>
-          <label htmlFor="lastName">Last Name</label>
-          {props.lastName}
-          <input type="text" id="lastName" />
-          <button id="editlastName">Edit </button>
+
+        <div className="innerFormDiv">
+          <label htmlFor="phone">
+            <p>Phone</p>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="+55 19 989822222"
+              value={phone}
+              onChange={this.handleChange}
+            />
+          </label>
+
+          <label htmlFor="gitHub">
+            <p>GitHub</p>
+            <input
+              type="text"
+              name="github"
+              placeholder="github.com/yourUser"
+              value={github}
+              onChange={this.handleChange}
+            />
+          </label>
+
+          <label htmlFor="linkedin">
+            <p>LinkedIn</p>
+            <input
+              type="tel"
+              name="linkedin"
+              placeholder="linkedin.com/in/user"
+              value={linkedin}
+              onChange={this.handleChange}
+            />
+          </label>
         </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          {props.email}
-          <input type="email" id="email" placeholder="example@domain.com" />
-          <button id="editEmail">Edit </button>
-        </div>
-        <div>
-          <label htmlFor="phone">Phone</label>
-          {props.phone}
-          <input type="tel" id="phone" placeholder="+55 19 989822222" />
-          <button id="editPhone">Edit </button>
-        </div>
-        <div>
-          <label htmlFor="gitHub">GitHub</label>
-          {props.github}
-          <input type="text" id="gitHub" placeholder="github.com/yourUser" />
-          <button id="editgitHub">Edit </button>
-        </div>
-        <div>
-          <label htmlFor="linkedin">LinkedIn</label>
-          {props.linkedin}
-          <input type="tel" id="linkedin" placeholder="linkedin.com/in/user" />
-          <button id="editlinkedin">Edit </button>
-        </div>
-        <div>
-          <button>Save</button>
-        </div>
-      </fieldset>
-    )
+
+        <button className="formBtn generalBtn" type="submit">
+          Save
+        </button>
+      </form>
+    );
   }
 }
 

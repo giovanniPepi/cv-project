@@ -8,23 +8,23 @@ function Textfield(props) {
           {props.firstName}
         </div>
         <div>
-          <span htmlFor="lastName">Last Name</span>
+          <span htmlFor="lastName">Last Name: </span>
           {props.lastName}
         </div>
         <div>
-          <span htmlFor="email">Email</span>
+          <span htmlFor="email">Email: </span>
           {props.email}
         </div>
         <div>
-          <span htmlFor="phone">Phone</span>
+          <span htmlFor="phone">Phone: </span>
           {props.phone}
         </div>
         <div>
-          <span htmlFor="gitHub">GitHub</span>
+          <span htmlFor="gitHub">GitHub: </span>
           {props.github}
         </div>
         <div>
-          <span htmlFor="linkedin">LinkedIn</span>
+          <span htmlFor="linkedin">LinkedIn: </span>
           {props.linkedin}
         </div>
         <div>
@@ -37,3 +37,5 @@ function Textfield(props) {
   } else {
   }
 }
+
+export default Textfield;

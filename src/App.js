@@ -3,12 +3,13 @@ import Personal from "./components/Personal";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
+import style from "./styles/App.css";
 
 class App extends Component {
   render() {
     return (
-      <form className="App" id="mainForm">
-        <fieldset>
+      <main className="App" id="mainForm">
+        <section className="mainSection">
           <h2>CV Generator</h2>
           <h3>General Info</h3>
           <Personal />
@@ -20,8 +21,8 @@ class App extends Component {
           <Education />
           <button>Preview</button>
           <button>Print</button>
-        </fieldset>
-      </form>
+        </section>
+      </main>
     );
   }
 }
