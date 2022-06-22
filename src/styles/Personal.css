@@ -1,3 +1,20 @@
 .personalForm {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  background: red;
+}
+
+.uploadArea {
+  background-color: black;
+}
+.cvImg {
+  border: 1px solid black;
+}
+
+.innerFormDiv {
+  background-color: blue;
+}
+.formBtn {
+  background-color: yellow;
 }
