@@ -1,6 +1,8 @@
 :root {
   font-family: "Courier New", Courier, monospace;
   --fontSizeTitle: 1.5rem;
+  --fontSizeHeader: 2rem;
+  --slate6: #475569;
 }
 
 html {
@@ -22,6 +24,14 @@ body {
 button {
   background-color: inherit;
   border: none;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-color: var(--slate6);
+  font-size: var(--fontSizeTitle);
 }
 
 /*Center entire div*/
