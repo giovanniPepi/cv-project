@@ -10,6 +10,7 @@
   --neutral5: #737373;
   --zinc2: #f4f4f5;
   --outerGap: 2rem;
+  --innerGap: 0.5rem;
   --outerPadding: 0.5rem;
   --innerPadding: 1rem;
   --borders: 1px dotted black;
@@ -96,4 +97,15 @@ button {
   background-color: var(--slate7);
   color: white;
   width: 10vw;
+}
+.textfield {
+  display: flex;
+  justify-content: space-between;
+}
+
+.textfieldWrapper {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--innerGap);
 }
