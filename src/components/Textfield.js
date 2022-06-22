@@ -138,14 +138,25 @@ function Textfield(props) {
           <span>Institution: </span>
           {props.institution}
         </div>
-        <div>
-          <span>From: </span>
-          {props.from}
-        </div>
-        <div>
-          <span>To: </span>
-          {props.to}
-        </div>
+        {props.from ? (
+          <div>
+            <span>From: </span>
+            {props.from}
+          </div>
+        ) : null}
+
+        {props.from && props.to ? (
+          <div>
+            <span>To: </span>
+            {props.to}
+          </div>
+        ) : null}
+
+        {props.from && !props.to ? (
+          <div>
+            <span>Currently enrolled </span>
+          </div>
+        ) : null}
         <NoPrint>
           <div>
             <button className="formBtn editBtn" onClick={props.handleEdit}>

@@ -6,6 +6,7 @@
   --slate5: #64748b;
   --slate6: #475569;
   --slate7: #334155;
+  --complementarySlate5: #ab6731;
   --neutral2: #e5e5e5;
   --neutral5: #737373;
   --zinc2: #f4f4f5;
@@ -90,7 +91,11 @@ label {
 
 .formBtn,
 .addBtn {
-  background-color: yellow;
+  background-color: var(--slate5);
+  padding: var(--outerPadding);
+  border: var(--borders);
+  border-radius: 15%;
+  color: white;
 }
 
 .innerFormDiv {
@@ -99,6 +104,7 @@ label {
 
 .printBtn {
   border: var(--borders);
+  padding: var(--outerPadding);
   border-radius: 15%;
   font-size: var(--fontSizeTitle);
   background-color: var(--slate7);
