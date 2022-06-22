@@ -9,25 +9,29 @@ const Imageuploader = () => {
   return (
     <div className="uploadArea">
       <NoPrint>
-        <h4>Cover photo (or leave it blank)</h4>
+        <h5 className="photoTitleWrapper">
+          Photo <h5>(optional)</h5>
+        </h5>
       </NoPrint>
       {selectedImage && (
         <div className="cvImgDiv">
           <img
             alt="CV"
-            width={"300px"}
+            width={"100px"}
             className="cvImg"
             src={URL.createObjectURL(selectedImage)}
           />
           <NoPrint>
-            <button
-              className="formBtn"
-              onClick={() => {
-                setSelectedImage(null);
-              }}
-            >
-              Remove
-            </button>
+            <div className="removeWrapper">
+              <button
+                className="formBtn"
+                onClick={() => {
+                  setSelectedImage(null);
+                }}
+              >
+                Remove
+              </button>
+            </div>
           </NoPrint>
         </div>
       )}

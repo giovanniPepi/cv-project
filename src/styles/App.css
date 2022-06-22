@@ -26,10 +26,18 @@ body {
 h2,
 h3,
 h4,
+h5,
+h6,
 p,
-body {
+body,
+fieldset {
   margin: 0;
   padding: 0;
+}
+/*Prevents overflowing inside img*/
+input {
+  max-width: 50px;
+  font-size: 8px;
 }
 
 button {
@@ -98,9 +106,12 @@ button {
   color: white;
   width: 10vw;
 }
+
 .textfield {
   display: flex;
   justify-content: space-between;
+  padding: var(--innerPadding);
+  gap: var(--outerGap);
 }
 
 .textfieldWrapper {
@@ -111,8 +122,33 @@ button {
 }
 
 .uploadArea {
-  background-color: purple;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 150px;
+  flex: 0;
 }
 .cvImg {
   border: 1px solid black;
+  min-height: 100px;
+  min-width: 100px;
+  max-height: 100px;
+  max-width: 100px;
+}
+.textfieldWrapper {
+  flex: 1;
+  margin-bottom: 2.5rem;
+}
+
+.removeWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+.photoTitleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
 }
