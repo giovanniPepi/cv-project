@@ -37,6 +37,7 @@ const Imageuploader = () => {
       )}
       <NoPrint>
         <input
+          className="imgInpt"
           type="file"
           name="cvImg"
           onChange={(event) => {

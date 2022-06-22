@@ -48,7 +48,7 @@ class Skills extends Component {
       <NoPrint>
         <Printwarning skill={true} />
         <form className="skillForm" action="" onSubmit={this.handleSubmit}>
-          <div className="innerFormDiv">
+          <fieldset className="innerFormDiv">
             <label htmlFor="skill">
               <p>Skill</p>
               <input
@@ -69,7 +69,7 @@ class Skills extends Component {
                 onChange={this.handleChange}
               />
             </label>
-          </div>
+          </fieldset>
           <button className="formBtn skillsBtn" type="submit">
             Save
           </button>

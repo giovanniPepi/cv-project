@@ -34,11 +34,6 @@ fieldset {
   margin: 0;
   padding: 0;
 }
-/*Prevents overflowing inside img*/
-input {
-  max-width: 50px;
-  font-size: 8px;
-}
 
 button {
   background-color: inherit;
@@ -67,7 +62,6 @@ button {
   background-color: var(--neutral5);
   background-color: var(--slate5);
   color: white;
-  width: 100%;
 }
 /*ensures that each section has the same width */
 .personalForm,
@@ -87,6 +81,11 @@ button {
 .educationForm,
 .innerFormDiv {
   background-color: var(--zinc2);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
 }
 
 .formBtn,
@@ -110,8 +109,11 @@ button {
 .textfield {
   display: flex;
   justify-content: space-between;
-  padding: var(--innerPadding);
+  padding: var(--outerPadding);
   gap: var(--outerGap);
+  min-width: 90vw;
+  max-width: 90vw;
+  border: var(--borders);
 }
 
 .textfieldWrapper {
@@ -119,8 +121,9 @@ button {
   display: flex;
   flex-direction: column;
   gap: var(--innerGap);
+  max-width: 90vw;
 }
-
+/* ----------------------------------------------> photo */
 .uploadArea {
   display: flex;
   flex-direction: column;
@@ -151,4 +154,17 @@ button {
   align-items: center;
   justify-content: center;
   gap: 0.1rem;
+}
+
+/*Prevents overflowing inside img*/
+.imgInpt {
+  max-width: 50px;
+  font-size: 8px;
+}
+/* ----------------------------------------------> */
+
+/* Prevents overflow on print mode */
+.printWarning {
+  padding: var(--outerPadding);
+  max-width: 85vw;
 }
