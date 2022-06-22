@@ -48,6 +48,7 @@ button {
   background-color: var(--slate7);
   font-size: var(--fontSizeTitle);
   color: white;
+  padding: var(--outerPadding);
 }
 
 /*Center entire div*/
@@ -136,6 +137,7 @@ label {
   justify-content: center;
   align-items: center;
   max-width: 150px;
+  align-self: flex-start;
   flex: 0;
 }
 .cvImg {
