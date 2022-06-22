@@ -6,7 +6,6 @@ import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
 import style from "./styles/App.css";
-import Imageuploader from "./components/Imageuploader";
 
 class App extends Component {
   constructor(props) {
@@ -58,19 +57,23 @@ class App extends Component {
         <PrintProvider>
           <NoPrint>
             <section className="mainSection">
-              <h2>CV Generator</h2>
+              <header className="header">
+                <h2>CV Generator</h2>
+              </header>
               <Print>
                 <h3 className="sectionTitle">General Info</h3>
-                <Imageuploader />
                 <Personal />
+              </Print>
+              <Print>
                 <h3 className="sectionTitle">Skills</h3>
                 {skills}
               </Print>
+
               <button
                 className="addBtn"
                 onClick={() => this.handleClick("skillsIds")}
               >
-                Add
+                Add Skill
               </button>
               <Print>
                 <h3 className="sectionTitle">Experience</h3>
@@ -80,7 +83,7 @@ class App extends Component {
                 className="addBtn"
                 onClick={() => this.handleClick("experienceIds")}
               >
-                Add
+                Add Experience
               </button>
               <Print>
                 <h3 className="sectionTitle">Education</h3>
@@ -90,18 +93,17 @@ class App extends Component {
                 className="addBtn"
                 onClick={() => this.handleClick("educationIds")}
               >
-                Add
+                Add Education
+              </button>
+              <button
+                onClick={() => {
+                  window.print();
+                }}
+                className="addBtn printBtn"
+              >
+                Print
               </button>
             </section>
-            <button>Preview</button>
-            <button
-              onClick={() => {
-                window.print();
-              }}
-              className="addBtn"
-            >
-              Print
-            </button>
           </NoPrint>
         </PrintProvider>
       </main>

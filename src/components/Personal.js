@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Textfield from "./Textfield";
 import { NoPrint } from "react-easy-print";
-import style from "../styles/Personal.css";
 import Printwarning from "./PrintWarning";
 
 class Personal extends Component {
@@ -131,7 +130,7 @@ class Personal extends Component {
           </div>
 
           <button className="formBtn" type="submit">
-            Save
+            Save & Continue to Photo
           </button>
         </form>
       </NoPrint>

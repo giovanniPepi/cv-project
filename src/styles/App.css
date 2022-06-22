@@ -109,3 +109,10 @@ button {
   flex-direction: column;
   gap: var(--innerGap);
 }
+
+.uploadArea {
+  background-color: purple;
+}
+.cvImg {
+  border: 1px solid black;
+}
