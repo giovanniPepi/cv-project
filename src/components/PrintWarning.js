@@ -8,8 +8,8 @@ class Printwarning extends Component {
 
   render() {
     const { skill, company, institution } = this.props;
-    console.log(this.props);
 
+    // Returns a diff warning for those sections
     if (skill || company || institution) {
       return (
         <Print printOnly>
