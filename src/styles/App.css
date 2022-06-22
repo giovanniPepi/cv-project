@@ -3,11 +3,13 @@
   --fontSizeTitle: 1.5rem;
   --fontSizeHeader: 2rem;
   --slate0: #f8fafc;
+  --slate5: #64748b;
   --slate6: #475569;
   --neutral5: #737373;
   --outerGap: 2rem;
   --outerPadding: 0.5rem;
   --innerPadding: 1rem;
+  --borders: 1px dotted black;
 }
 
 html {
@@ -37,6 +39,7 @@ button {
   justify-content: center;
   background-color: var(--slate6);
   font-size: var(--fontSizeTitle);
+  color: white;
 }
 
 /*Center entire div*/
@@ -50,6 +53,8 @@ button {
 .sectionTitle {
   font-size: var(--fontSizeTitle);
   background-color: var(--neutral5);
+  background-color: var(--slate5);
+  color: white;
   width: 100%;
 }
 /*ensures that each section has the same width */
@@ -63,8 +68,7 @@ button {
   padding: var(--outerPadding);
   min-width: 90vw;
   max-width: 90vw;
-  border: 1px dotted black;
-  background-color: green;
+  border: var(--borders);
 }
 
 .formBtn,
@@ -75,4 +79,13 @@ button {
 .innerFormDiv {
   background-color: blue;
   padding: var(--innerPadding);
+}
+
+.printBtn {
+  border: var(--borders);
+  border-radius: 15%;
+  font-size: var(--fontSizeTitle);
+  background-color: var(--slate6);
+  color: white;
+  width: 10vw;
 }
