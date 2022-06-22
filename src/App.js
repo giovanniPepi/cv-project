@@ -6,6 +6,7 @@ import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
 import style from "./styles/App.css";
+import Imageuploader from "./components/Imageuploader";
 
 class App extends Component {
   constructor(props) {
@@ -60,6 +61,7 @@ class App extends Component {
               <h2>CV Generator</h2>
               <Print>
                 <h3 className="sectionTitle">General Info</h3>
+                <Imageuploader />
                 <Personal />
                 <h3 className="sectionTitle">Skills</h3>
                 {skills}
