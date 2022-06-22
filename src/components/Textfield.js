@@ -15,18 +15,29 @@ function Textfield(props) {
           <span htmlFor="email">Email: </span>
           {props.email}
         </div>
-        <div>
-          <span htmlFor="phone">Phone: </span>
-          {props.phone}
-        </div>
-        <div>
-          <span htmlFor="gitHub">GitHub: </span>
-          {props.github}
-        </div>
-        <div>
-          <span htmlFor="linkedin">LinkedIn: </span>
-          {props.linkedin}
-        </div>
+
+        {/* phone is not required, therefore display only if present */}
+        {props.phone ? (
+          <div>
+            <span htmlFor="phone">Phone: </span>
+            {props.phone}
+          </div>
+        ) : null}
+
+        {props.github ? (
+          <div>
+            <span htmlFor="gitHub">GitHub: </span>
+            {props.github}
+          </div>
+        ) : null}
+
+        {props.linkedin ? (
+          <div>
+            <span htmlFor="linkedin">LinkedIn: </span>
+            {props.linkedin}
+          </div>
+        ) : null}
+
         <div>
           <button onClick={props.handleEdit}>Edit</button>
         </div>
@@ -39,10 +50,14 @@ function Textfield(props) {
           <span htmlFor="skill">Skill: </span>
           {props.skill}
         </div>
-        <div>
-          <span htmlFor="description">Last Name: </span>
-          {props.description}
-        </div>
+
+        {props.description ? (
+          <div>
+            <span htmlFor="description">Last Name: </span>
+            {props.description}
+          </div>
+        ) : null}
+
         <div>
           <button onClick={props.handleEdit}>Edit</button>
         </div>
@@ -55,18 +70,39 @@ function Textfield(props) {
           <span htmlFor="company">Company: </span>
           {props.company}
         </div>
+        {}
         <div>
-          <span htmlFor="lastName">Position: </span>
+          <span htmlFor="position">Position: </span>
           {props.position}
         </div>
-        <div>
-          <span htmlFor="email">From: </span>
-          {props.from}
-        </div>
-        <div>
-          <span htmlFor="phone">To: </span>
-          {props.to}
-        </div>
+
+        {props.description ? (
+          <div>
+            <span htmlFor="description">Description: </span>
+            {props.description}
+          </div>
+        ) : null}
+
+        {props.from ? (
+          <div>
+            <span htmlFor="from">From: </span>
+            {props.from}
+          </div>
+        ) : null}
+
+        {props.from && props.to ? (
+          <div>
+            <span htmlFor="to">To: </span>
+            {props.to}
+          </div>
+        ) : null}
+
+        {props.from && !props.to ? (
+          <div>
+            <span htmlFor="to">Currently employed </span>
+          </div>
+        ) : null}
+
         <div>
           <button onClick={props.handleEdit}>Edit</button>
         </div>

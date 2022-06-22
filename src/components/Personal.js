@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Textfield from "./Textfield";
+import { NoPrint } from "react-easy-print";
 import style from "../styles/Personal.css";
+import Printwarning from "./PrintWarning";
 
 class Personal extends Component {
   constructor(props) {
@@ -52,84 +54,87 @@ class Personal extends Component {
 
     // constructed when edit mode is on
     return (
-      <form className="personalForm" action="" onSubmit={this.handleSubmit}>
-        <div className="innerFormDiv">
-          <label htmlFor="firstName">
-            <p>First Name:</p>
-            <input
-              type="text"
-              name="firstName"
-              placeholder="First Name"
-              value={firstName}
-              onChange={this.handleChange}
-              required
-            />
-          </label>
+      <NoPrint>
+        <Printwarning />
+        <form className="personalForm" action="" onSubmit={this.handleSubmit}>
+          <div className="innerFormDiv">
+            <label htmlFor="firstName">
+              <p>First Name:</p>
+              <input
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                value={firstName}
+                onChange={this.handleChange}
+                required
+              />
+            </label>
 
-          <label htmlFor="lastName">
-            <p>Last Name</p>
-            <input
-              type="text"
-              name="lastName"
-              placeholder="Last Name"
-              value={lastName}
-              onChange={this.handleChange}
-              required
-            />
-          </label>
+            <label htmlFor="lastName">
+              <p>Last Name</p>
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                value={lastName}
+                onChange={this.handleChange}
+                required
+              />
+            </label>
 
-          <label htmlFor="email">
-            <p>Email</p>
-            <input
-              type="email"
-              name="email"
-              placeholder="example@domain.com"
-              value={email}
-              onChange={this.handleChange}
-              required
-            />
-          </label>
-        </div>
+            <label htmlFor="email">
+              <p>Email</p>
+              <input
+                type="email"
+                name="email"
+                placeholder="example@domain.com"
+                value={email}
+                onChange={this.handleChange}
+                required
+              />
+            </label>
+          </div>
 
-        <div className="innerFormDiv">
-          <label htmlFor="phone">
-            <p>Phone</p>
-            <input
-              type="tel"
-              name="phone"
-              placeholder="+55 19 989822222"
-              value={phone}
-              onChange={this.handleChange}
-            />
-          </label>
+          <div className="innerFormDiv">
+            <label htmlFor="phone">
+              <p>Phone</p>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="+55 19 989822222"
+                value={phone}
+                onChange={this.handleChange}
+              />
+            </label>
 
-          <label htmlFor="gitHub">
-            <p>GitHub</p>
-            <input
-              type="text"
-              name="github"
-              placeholder="github.com/yourUser"
-              value={github}
-              onChange={this.handleChange}
-            />
-          </label>
+            <label htmlFor="gitHub">
+              <p>GitHub</p>
+              <input
+                type="text"
+                name="github"
+                placeholder="github.com/yourUser"
+                value={github}
+                onChange={this.handleChange}
+              />
+            </label>
 
-          <label htmlFor="linkedin">
-            <p>LinkedIn</p>
-            <input
-              type="tel"
-              name="linkedin"
-              placeholder="linkedin.com/in/user"
-              value={linkedin}
-              onChange={this.handleChange}
-            />
-          </label>
-        </div>
+            <label htmlFor="linkedin">
+              <p>LinkedIn</p>
+              <input
+                type="tel"
+                name="linkedin"
+                placeholder="linkedin.com/in/user"
+                value={linkedin}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
 
-        <button className="formBtn generalBtn" type="submit">
-          Save
-        </button>
-      </form>
+          <button className="formBtn generalBtn" type="submit">
+            Save
+          </button>
+        </form>
+      </NoPrint>
     );
   }
 }

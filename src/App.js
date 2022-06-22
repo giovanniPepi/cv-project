@@ -1,4 +1,5 @@
 import { Component } from "react";
+import PrintProvider, { NoPrint, Print } from "react-easy-print";
 import uniqid from "uniqid";
 import Personal from "./components/Personal";
 import Skills from "./components/Skills";
@@ -53,39 +54,54 @@ class App extends Component {
 
     return (
       <main className="App" id="mainForm">
-        <section className="mainSection">
-          <h2>CV Generator</h2>
-          <h3 className="sectionTitle">General Info</h3>
-          <Personal />
-
-          <h3 className="sectionTitle">Skills</h3>
-          {skills}
-          <button
-            className="addBtn"
-            onClick={() => this.handleClick("skillsIds")}
-          >
-            Add
-          </button>
-
-          <h3 className="sectionTitle">Experience</h3>
-          {experiences}
-          <button
-            className="addBtn"
-            onClick={() => this.handleClick("experienceIds")}
-          >
-            Add
-          </button>
-          <h3 className="sectionTitle">Education</h3>
-          {educations}
-          <button
-            className="addBtn"
-            onClick={() => this.handleClick("educationIds")}
-          >
-            Add
-          </button>
-        </section>
-        <button>Preview</button>
-        <button>Print</button>
+        <PrintProvider>
+          <NoPrint>
+            <section className="mainSection">
+              <h2>CV Generator</h2>
+              <Print>
+                <h3 className="sectionTitle">General Info</h3>
+                <Personal />
+                <h3 className="sectionTitle">Skills</h3>
+                {skills}
+              </Print>
+              <button
+                className="addBtn"
+                onClick={() => this.handleClick("skillsIds")}
+              >
+                Add
+              </button>
+              <Print>
+                <h3 className="sectionTitle">Experience</h3>
+                {experiences}
+              </Print>
+              <button
+                className="addBtn"
+                onClick={() => this.handleClick("experienceIds")}
+              >
+                Add
+              </button>
+              <Print>
+                <h3 className="sectionTitle">Education</h3>
+                {educations}
+              </Print>
+              <button
+                className="addBtn"
+                onClick={() => this.handleClick("educationIds")}
+              >
+                Add
+              </button>
+            </section>
+            <button>Preview</button>
+            <button
+              onClick={() => {
+                window.print();
+              }}
+              className="addBtn"
+            >
+              Print
+            </button>
+          </NoPrint>
+        </PrintProvider>
       </main>
     );
   }
