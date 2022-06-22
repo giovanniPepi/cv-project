@@ -47,7 +47,10 @@ button {
   width: 100%;
 }
 /*ensures that each section has the same width */
-.personalForm {
+.personalForm,
+.experienceForm,
+.educationForm,
+.sectionTitle {
   display: flex;
   align-items: center;
   justify-content: space-around;
