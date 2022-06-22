@@ -63,6 +63,8 @@ button {
   padding: var(--outerPadding);
   min-width: 90vw;
   max-width: 90vw;
+  border: 1px dotted black;
+  background-color: green;
 }
 
 .formBtn,
