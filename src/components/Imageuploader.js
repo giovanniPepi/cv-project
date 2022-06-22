@@ -9,19 +9,19 @@ const Imageuploader = () => {
   return (
     <div className="uploadArea">
       <NoPrint>
-        <h4>You can upload a cover photo or leave it blank</h4>
+        <h4>Cover photo (or leave it blank)</h4>
       </NoPrint>
       {selectedImage && (
-        <div>
+        <div className="cvImgDiv">
           <img
             alt="CV"
             width={"300px"}
             className="cvImg"
             src={URL.createObjectURL(selectedImage)}
           />
-          <br />
           <NoPrint>
             <button
+              className="formBtn"
               onClick={() => {
                 setSelectedImage(null);
               }}
@@ -31,9 +31,6 @@ const Imageuploader = () => {
           </NoPrint>
         </div>
       )}
-      <br />
-
-      <br />
       <NoPrint>
         <input
           type="file"

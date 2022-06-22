@@ -130,7 +130,7 @@ class Personal extends Component {
             </label>
           </div>
 
-          <button className="formBtn generalBtn" type="submit">
+          <button className="formBtn" type="submit">
             Save
           </button>
         </form>
