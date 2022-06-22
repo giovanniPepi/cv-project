@@ -5,7 +5,10 @@
   --slate0: #f8fafc;
   --slate5: #64748b;
   --slate6: #475569;
+  --slate7: #334155;
+  --neutral2: #e5e5e5;
   --neutral5: #737373;
+  --zinc2: #f4f4f5;
   --outerGap: 2rem;
   --outerPadding: 0.5rem;
   --innerPadding: 1rem;
@@ -37,7 +40,7 @@ button {
   display: flex;
   width: 100%;
   justify-content: center;
-  background-color: var(--slate6);
+  background-color: var(--slate7);
   font-size: var(--fontSizeTitle);
   color: white;
 }
@@ -70,6 +73,12 @@ button {
   max-width: 90vw;
   border: var(--borders);
 }
+.personalForm,
+.experienceForm,
+.educationForm,
+.innerFormDiv {
+  background-color: var(--zinc2);
+}
 
 .formBtn,
 .addBtn {
@@ -77,7 +86,6 @@ button {
 }
 
 .innerFormDiv {
-  background-color: blue;
   padding: var(--innerPadding);
 }
 
@@ -85,7 +93,7 @@ button {
   border: var(--borders);
   border-radius: 15%;
   font-size: var(--fontSizeTitle);
-  background-color: var(--slate6);
+  background-color: var(--slate7);
   color: white;
   width: 10vw;
 }
