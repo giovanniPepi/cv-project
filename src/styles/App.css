@@ -2,7 +2,12 @@
   font-family: "Courier New", Courier, monospace;
   --fontSizeTitle: 1.5rem;
   --fontSizeHeader: 2rem;
+  --slate0: #f8fafc;
   --slate6: #475569;
+  --neutral5: #737373;
+  --outerGap: 2rem;
+  --outerPadding: 0.5rem;
+  --innerPadding: 1rem;
 }
 
 html {
@@ -40,10 +45,11 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: var(--outerGap);
 }
 .sectionTitle {
   font-size: var(--fontSizeTitle);
-  background-color: brown;
+  background-color: var(--neutral5);
   width: 100%;
 }
 /*ensures that each section has the same width */
@@ -54,7 +60,17 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: red;
+  padding: var(--outerPadding);
   min-width: 90vw;
   max-width: 90vw;
+}
+
+.formBtn,
+.addBtn {
+  background-color: yellow;
+}
+
+.innerFormDiv {
+  background-color: blue;
+  padding: var(--innerPadding);
 }
