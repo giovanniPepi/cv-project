@@ -1,5 +1,6 @@
 :root {
   font-family: "Courier New", Courier, monospace;
+  --fontSizeTitle: 1.5rem;
 }
 
 html {
@@ -21,4 +22,20 @@ body {
 button {
   background-color: inherit;
   border: none;
+}
+
+/*Center entire div*/
+.mainSection,
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sectionTitle {
+  font-size: var(--fontSizeTitle);
+  background-color: brown;
+}
+.titleWrapper {
+  flex-direction: row;
 }
