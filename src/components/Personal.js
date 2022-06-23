@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Textfield from "./Textfield";
-import About from "./About";
 import SaveBtn from "./SaveBtn";
 import DeleteBtn from "./DeleteBtn";
 
@@ -186,24 +185,22 @@ class Personal extends Component {
             />
           </label>
         </div>
-        <div className="innerFormDiv">
-          <label>
-            <h4 className="sectionTitle">About me</h4>
-            <div className="innerFormDiv">
-              <textarea
-                className="textAboutMe"
-                name="aboutMe"
-                placeholder="Something interesting..."
-                value={aboutMe}
-                onChange={this.handleChange}
-              />
-            </div>
-          </label>
-          <div className="btnContainer">
-            <button className="formBtn" type="submit">
-              <SaveBtn />
-            </button>
+        <label>
+          <h4 className="sectionTitle">About me</h4>
+          <div className="innerFormDiv">
+            <textarea
+              className="textAboutMe"
+              name="aboutMe"
+              placeholder="Something interesting..."
+              value={aboutMe}
+              onChange={this.handleChange}
+            />
           </div>
+        </label>
+        <div className="btnContainer">
+          <button className="formBtn" type="submit">
+            <SaveBtn />
+          </button>
         </div>
       </form>
     );

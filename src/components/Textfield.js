@@ -4,7 +4,8 @@ import EditBtn from "./EditBtn";
 function Textfield(props) {
   if (props.firstName) {
     return (
-      <fieldset className="textfield">
+      <fieldset className="textfield top">
+        {/* main section wrapper in flex=column*/}
         <div className="textfieldWrapper">
           <img
             src={props.img}
@@ -26,9 +27,7 @@ function Textfield(props) {
             <span></span>
             {props.email}
           </div>
-        </div>
 
-        <div className="textfieldWrapper">
           {/* phone is not required, therefore display only if present */}
           {props.phone ? (
             <div>
@@ -51,16 +50,12 @@ function Textfield(props) {
             </div>
           ) : null}
         </div>
-
-        <fieldset className="textfield">
-          <div>
-            <span>About me/Goals </span>
-            {props.aboutMe}
-          </div>
-          <button className="formBtn editBtn" onClick={props.handleEdit}>
-            <EditBtn />
-          </button>
-        </fieldset>
+        <div className="sectionTitle">
+          <h3 className="sectionTitle">Goal:</h3>
+        </div>
+        <div className="textfieldWrapper">
+          <span>{props.aboutMe}</span>
+        </div>
         <div>
           <button className="formBtn editBtn" onClick={props.handleEdit}>
             <EditBtn />

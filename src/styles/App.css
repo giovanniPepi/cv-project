@@ -152,6 +152,14 @@ label {
   max-width: 30vw;
 }
 
+.textfield {
+  padding: var(--innerPadding);
+}
+.top {
+  display: flex;
+  flex-direction: column;
+}
+
 /* 
 
 
