@@ -1,7 +1,7 @@
-import Icon from "@mdi/react";
-import { mdiContentSaveOutline, mdiDelete } from "@mdi/js";
 import React, { Component } from "react";
 import Textfield from "./Textfield";
+import SaveBtn from "./SaveBtn";
+import DeleteBtn from "./DeleteBtn";
 
 class Experience extends Component {
   constructor(props) {
@@ -107,19 +107,14 @@ class Experience extends Component {
         </div>
         <div className="btnContainer">
           <button className="formBtn experienceBtn" type="submit">
-            <Icon
-              path={mdiContentSaveOutline}
-              size={0.9}
-              color="#22C55E"
-              spin={10}
-            />
+            <SaveBtn />
           </button>
           <button
             className="formBtn"
             type="button"
             onClick={() => handleDelete("experienceIds", id)}
           >
-            <Icon path={mdiDelete} size={0.9} color="#22C55E" spin={10} />
+            <DeleteBtn />
           </button>
         </div>
       </form>
