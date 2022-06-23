@@ -4,7 +4,6 @@ import Personal from "./components/Personal";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
-import Icon from "@mdi/react";
 import style from "./styles/App.css";
 import AddBtn from "./components/AddBtn";
 import PreviewBtn from "./components/PreviewBtn";

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Textfield from "./Textfield";
-import Icon from "@mdi/react";
 import About from "./About";
 import SaveBtn from "./SaveBtn";
 import DeleteBtn from "./DeleteBtn";
@@ -16,6 +15,7 @@ class Personal extends Component {
       phone: "",
       github: "",
       linkedin: "",
+      aboutMe: "",
       img: null,
     };
 
@@ -67,6 +67,7 @@ class Personal extends Component {
       github,
       linkedin,
       img,
+      aboutMe,
     } = this.state; // destructuring the state
 
     // constructed when edit mode off
@@ -80,6 +81,7 @@ class Personal extends Component {
           github={github}
           linkedin={linkedin}
           img={img}
+          aboutMe={aboutMe}
           handleEdit={this.handleSubmit}
         />
       );
@@ -187,7 +189,15 @@ class Personal extends Component {
         <div className="innerFormDiv">
           <label>
             <h4 className="sectionTitle">About me</h4>
-            <About />
+            <div className="innerFormDiv">
+              <textarea
+                className="textAboutMe"
+                name="aboutMe"
+                placeholder="Something interesting..."
+                value={aboutMe}
+                onChange={this.handleChange}
+              />
+            </div>
           </label>
           <div className="btnContainer">
             <button className="formBtn" type="submit">

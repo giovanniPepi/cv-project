@@ -51,6 +51,16 @@ function Textfield(props) {
             </div>
           ) : null}
         </div>
+
+        <fieldset className="textfield">
+          <div>
+            <span>About me/Goals </span>
+            {props.aboutMe}
+          </div>
+          <button className="formBtn editBtn" onClick={props.handleEdit}>
+            <EditBtn />
+          </button>
+        </fieldset>
         <div>
           <button className="formBtn editBtn" onClick={props.handleEdit}>
             <EditBtn />
@@ -165,18 +175,6 @@ function Textfield(props) {
             <EditBtn />
           </button>
         </div>
-      </fieldset>
-    );
-  } else if (props.aboutMe) {
-    return (
-      <fieldset className="textfield">
-        <div>
-          <span>About me: </span>
-          {props.aboutMe}
-        </div>
-        <button className="formBtn editBtn" onClick={props.handleEdit}>
-          <EditBtn />
-        </button>
       </fieldset>
     );
   }
