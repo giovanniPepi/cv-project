@@ -1,4 +1,6 @@
 import Imageuploader from "./Imageuploader";
+import { mdiPencilOutline, mdiPencil } from "@mdi/js";
+import Icon from "@mdi/react";
 
 // returns text areas tailored to each section based on the props receive
 function Textfield(props) {
@@ -46,7 +48,7 @@ function Textfield(props) {
         </div>
         <div>
           <button className="formBtn editBtn" onClick={props.handleEdit}>
-            Edit
+            <Icon path={mdiPencil} size={0.9} color="#22C55E" spin={10} />
           </button>
         </div>
       </fieldset>
@@ -68,7 +70,12 @@ function Textfield(props) {
 
         <div>
           <button className="formBtn editBtn" onClick={props.handleEdit}>
-            Edit
+            <Icon
+              path={mdiPencilOutline}
+              size={0.9}
+              color="#22C55E"
+              spin={10}
+            />
           </button>
         </div>
       </fieldset>
@@ -115,7 +122,12 @@ function Textfield(props) {
 
         <div>
           <button className="formBtn editBtn" onClick={props.handleEdit}>
-            Edit
+            <Icon
+              path={mdiPencilOutline}
+              size={0.9}
+              color="#22C55E"
+              spin={10}
+            />
           </button>
         </div>
       </fieldset>
@@ -152,7 +164,12 @@ function Textfield(props) {
         ) : null}
         <div>
           <button className="formBtn editBtn" onClick={props.handleEdit}>
-            Edit
+            <Icon
+              path={mdiPencilOutline}
+              size={0.9}
+              color="#22C55E"
+              spin={10}
+            />
           </button>
         </div>
       </fieldset>

@@ -4,6 +4,8 @@ import Personal from "./components/Personal";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
+import Icon from "@mdi/react";
+import { mdiFileFind, mdiPlusThick } from "@mdi/js";
 import style from "./styles/App.css";
 
 class App extends Component {
@@ -57,37 +59,46 @@ class App extends Component {
           <header className="header">CV Generator</header>
           <h3 className="sectionTitle">General Info</h3>
           <Personal />
-          <h3 className="sectionTitle">Skills</h3>
+          <h3 className="sectionTitle">
+            Skills
+            <button
+              className="addBtn"
+              onClick={() => this.handleClick("skillsIds")}
+            >
+              <Icon path={mdiPlusThick} size={0.9} color="#22C55E" spin={10} />
+            </button>
+          </h3>
           {skills}
-          <button
-            className="addBtn"
-            onClick={() => this.handleClick("skillsIds")}
-          >
-            Add Skill
-          </button>
-          <h3 className="sectionTitle">Experience</h3>
+
+          <h3 className="sectionTitle">
+            Experience
+            <button
+              className="addBtn"
+              onClick={() => this.handleClick("experienceIds")}
+            >
+              <Icon path={mdiPlusThick} size={0.9} color="#22C55E" spin={10} />
+            </button>
+          </h3>
           {experiences}
-          <button
-            className="addBtn"
-            onClick={() => this.handleClick("experienceIds")}
-          >
-            Add Experience
-          </button>
-          <h3 className="sectionTitle">Education</h3>
+
+          <h3 className="sectionTitle">
+            Education
+            <button
+              className="addBtn"
+              onClick={() => this.handleClick("educationIds")}
+            >
+              <Icon path={mdiPlusThick} size={0.9} color="#22C55E" spin={10} />
+            </button>
+          </h3>
           {educations}
-          <button
-            className="addBtn"
-            onClick={() => this.handleClick("educationIds")}
-          >
-            Add Education
-          </button>
+
           <button
             onClick={() => {
               window.print();
             }}
             className="addBtn printBtn"
           >
-            Go to Print Page
+            <Icon path={mdiFileFind} size={0.9} color="#22C55E" spin={10} />
           </button>
         </section>
       </main>

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Icon from "@mdi/react";
+import { mdiContentSaveOutline, mdiDelete } from "@mdi/js";
 import Textfield from "./Textfield";
 
 class Education extends Component {
@@ -89,15 +91,23 @@ class Education extends Component {
             />
           </label>
         </div>
-
-        <button className="formBtn">Save</button>
-        <button
-          className="formBtn"
-          type="button"
-          onClick={() => handleDelete("educationIds", id)}
-        >
-          Delete
-        </button>
+        <div className="btnContainer">
+          <button className="formBtn">
+            <Icon
+              path={mdiContentSaveOutline}
+              size={0.9}
+              color="#22C55E"
+              spin={10}
+            />
+          </button>
+          <button
+            className="formBtn"
+            type="button"
+            onClick={() => handleDelete("educationIds", id)}
+          >
+            <Icon path={mdiDelete} size={0.9} color="#22C55E" spin={10} />
+          </button>
+        </div>
       </form>
     );
   }

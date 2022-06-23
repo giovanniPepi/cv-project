@@ -1,3 +1,5 @@
+import Icon from "@mdi/react";
+import { mdiContentSaveOutline, mdiDelete } from "@mdi/js";
 import React, { Component } from "react";
 import Textfield from "./Textfield";
 
@@ -69,6 +71,8 @@ class Experience extends Component {
               required
             />
           </label>
+        </div>
+        <div className="innerFormDiv">
           <label htmlFor="from">
             <p>From</p>
             <input
@@ -93,7 +97,7 @@ class Experience extends Component {
         <div className="innerFormDiv">
           <label htmlFor="description">
             <p>Description</p>
-            <input
+            <textarea
               type="text"
               name="description"
               value={description}
@@ -101,17 +105,23 @@ class Experience extends Component {
             />
           </label>
         </div>
-
-        <button className="formBtn experienceBtn" type="submit">
-          Save
-        </button>
-        <button
-          className="formBtn"
-          type="button"
-          onClick={() => handleDelete("experienceIds", id)}
-        >
-          Delete
-        </button>
+        <div className="btnContainer">
+          <button className="formBtn experienceBtn" type="submit">
+            <Icon
+              path={mdiContentSaveOutline}
+              size={0.9}
+              color="#22C55E"
+              spin={10}
+            />
+          </button>
+          <button
+            className="formBtn"
+            type="button"
+            onClick={() => handleDelete("experienceIds", id)}
+          >
+            <Icon path={mdiDelete} size={0.9} color="#22C55E" spin={10} />
+          </button>
+        </div>
       </form>
     );
   }

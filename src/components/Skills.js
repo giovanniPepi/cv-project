@@ -1,5 +1,7 @@
+import Icon from "@mdi/react";
 import React, { Component } from "react";
 import Textfield from "./Textfield";
+import { mdiContentSaveOutline, mdiDelete } from "@mdi/js";
 
 class Skills extends Component {
   constructor(props) {
@@ -69,14 +71,19 @@ class Skills extends Component {
         <div className="btnContainer">
           {" "}
           <button className="formBtn skillsBtn" type="submit">
-            Save
+            <Icon
+              path={mdiContentSaveOutline}
+              size={0.9}
+              color="#22C55E"
+              spin={10}
+            />
           </button>
           <button
             className="formBtn"
             type="button"
             onClick={() => handleDelete("skillsIds", id)}
           >
-            Delete
+            <Icon path={mdiDelete} size={0.9} color="#22C55E" spin={10} />
           </button>
         </div>
       </form>

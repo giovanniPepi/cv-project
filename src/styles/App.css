@@ -11,6 +11,12 @@
   --neutral2: #e5e5e5;
   --neutral5: #737373;
   --zinc2: #f4f4f5;
+  --lime5: #84cc16;
+  --green5: #22c55e;
+  --rose5: #f43f5e;
+  --purple5: #a855f7;
+  --indigo5: #6366f1;
+  --blue5: #3b82f6;
   --outerGap: 1rem;
   --innerGap: 0.5rem;
   --miniGap: 0.3rem;
@@ -38,6 +44,9 @@ fieldset {
   margin: 0;
   padding: 0;
 }
+h3 {
+  font-size: var(--fontSizeTitle);
+}
 
 button {
   background-color: inherit;
@@ -52,7 +61,7 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: var(--outerGap);
+  gap: var(--miniGap);
 }
 .header {
   width: 100%;
@@ -64,6 +73,8 @@ input {
 
 .sectionTitle {
   align-self: center;
+  display: flex;
+  gap: var(--miniGap);
 }
 .personalForm,
 .skillForm,
@@ -75,11 +86,15 @@ input {
   align-items: center;
   gap: var(--innerGap);
   background-color: var(--neutral2);
-  padding: var(--miniPadding);
+  padding: var(--outerPadding);
+}
+.skillForm {
+  flex-direction: row;
 }
 .innerFormDiv {
   display: flex;
   gap: var(--outerGap);
+  padding: var(--miniPadding);
 }
 label {
   display: flex;
@@ -87,6 +102,21 @@ label {
   justify-content: center;
   align-items: flex-start;
   gap: var(--miniGap);
+}
+.btnContainer {
+  display: flex;
+}
+
+.addBtn {
+  margin-top: 0.3rem;
+  align-self: center;
+}
+
+.textfield {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--outerGap);
 }
 
 /* 
