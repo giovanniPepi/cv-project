@@ -41,7 +41,10 @@ class Personal extends Component {
 
     return (
       <div className="innerFormUpload">
-        <h4>Upload profile photo</h4>
+        <h4>
+          Upload profile photo<h6>(optional)</h6>
+        </h4>
+
         <input type="file" name="myImage" onChange={this.onImageChange} />
       </div>
     );
@@ -109,14 +112,16 @@ class Personal extends Component {
             </div>
           ) : (
             <div className="innerFormUpload">
-              <h4>Upload profile photo</h4>
+              <h4>
+                Upload profile photo<h6>(optional)</h6>
+              </h4>
               <input type="file" name="myImage" onChange={this.onImageChange} />
             </div>
           )}
         </div>
         <div className="innerFormDiv">
           <label htmlFor="firstName">
-            <p>First Name:</p>
+            <p>Name:</p>
             <input
               type="text"
               name="firstName"
@@ -128,11 +133,11 @@ class Personal extends Component {
           </label>
 
           <label htmlFor="lastName">
-            <p>Last Name</p>
+            <p>Location</p>
             <input
               type="text"
               name="lastName"
-              placeholder="Last Name"
+              placeholder="Campinas, Brazil"
               value={lastName}
               onChange={this.handleChange}
               required
@@ -186,7 +191,7 @@ class Personal extends Component {
           </label>
         </div>
         <label>
-          <h4 className="sectionTitle">About me</h4>
+          <h4 className="sectionTitle">Goal</h4>
           <div className="innerFormDiv">
             <textarea
               className="textAboutMe"
