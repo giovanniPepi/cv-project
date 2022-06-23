@@ -121,6 +121,10 @@ label {
 .aboutMe {
   align-self: center;
 }
+.textAboutMe {
+  min-height: 10vh;
+  min-width: 20vw;
+}
 
 /* 
 

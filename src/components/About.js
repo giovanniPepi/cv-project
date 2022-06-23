@@ -35,6 +35,7 @@ class About extends Component {
       <form className="aboutMe" action="" onSubmit={this.handleSubmit}>
         <div className="innerFormDiv">
           <textarea
+            className="textAboutMe"
             name="aboutMe"
             placeholder="Something interesting..."
             value={aboutMe}
