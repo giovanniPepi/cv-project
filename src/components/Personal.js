@@ -15,6 +15,7 @@ class Personal extends Component {
       phone: "",
       github: "",
       linkedin: "",
+      img: null,
     };
 
     // binds this
@@ -33,9 +34,26 @@ class Personal extends Component {
     });
   }
 
+  onImageChange = (event) => {
+    if (event.target.files && event.target.files[0]) {
+      let img = event.target.files[0];
+      this.setState({
+        img: URL.createObjectURL(img),
+      });
+    }
+  };
+
   render() {
-    const { editMode, firstName, lastName, email, phone, github, linkedin } =
-      this.state; // destructuring the state
+    const {
+      editMode,
+      firstName,
+      lastName,
+      email,
+      phone,
+      github,
+      linkedin,
+      img,
+    } = this.state; // destructuring the state
 
     // constructed when edit mode off
     if (!editMode) {
@@ -47,6 +65,7 @@ class Personal extends Component {
           phone={phone}
           github={github}
           linkedin={linkedin}
+          img={img}
           handleEdit={this.handleSubmit}
         />
       );
@@ -55,6 +74,26 @@ class Personal extends Component {
     // constructed when edit mode is on
     return (
       <form className="personalForm" action="" onSubmit={this.handleSubmit}>
+        <div className="innerFormDiv">
+          {/* Shows either the file picker of the chosen img */}
+          {img ? (
+            <img
+              src={img}
+              alt={"profile"}
+              width={"150px"}
+              height={"150px"}
+            ></img>
+          ) : (
+            <div className="innerFormUpload">
+              <h4>Upload profile photo</h4>
+              <input
+                type="file"
+                name="myImage"
+                onChange={this.onImageChange}
+              />{" "}
+            </div>
+          )}
+        </div>
         <div className="innerFormDiv">
           <label htmlFor="firstName">
             <p>First Name:</p>

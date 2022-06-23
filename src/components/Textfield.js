@@ -1,4 +1,5 @@
 import Imageuploader from "./Imageuploader";
+import Icon from "@mdi/react";
 import EditBtn from "./EditBtn";
 
 // returns text areas tailored to each section based on the props receive
@@ -6,7 +7,14 @@ function Textfield(props) {
   if (props.firstName) {
     return (
       <fieldset className="textfield">
-        <Imageuploader />
+        <div className="textfieldWrapper">
+          <img
+            src={props.img}
+            alt={"profile"}
+            width={"150px"}
+            height={"150px"}
+          ></img>
+        </div>
         <div className="textfieldWrapper">
           <div>
             <span></span>
