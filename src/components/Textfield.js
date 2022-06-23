@@ -17,7 +17,7 @@ function Textfield(props) {
         <div className="textfieldWrapper">
           <div>
             <span></span>
-            {props.firstName}
+            {props.firstName}, {props.age} years old
           </div>
           <div>
             <span></span>
@@ -53,7 +53,7 @@ function Textfield(props) {
         <div className="sectionTitle">
           <h3 className="sectionTitle">Goal:</h3>
         </div>
-        <div className="textfieldWrapper">
+        <div className="textfieldWrapper goal">
           <span>{props.aboutMe}</span>
         </div>
         <div>

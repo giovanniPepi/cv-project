@@ -9,7 +9,7 @@ class Personal extends Component {
     this.state = {
       editMode: true,
       firstName: "",
-      lastName: "",
+      location: "",
       email: "",
       phone: "",
       github: "",
@@ -63,7 +63,8 @@ class Personal extends Component {
     const {
       editMode,
       firstName,
-      lastName,
+      age,
+      location,
       email,
       phone,
       github,
@@ -77,7 +78,8 @@ class Personal extends Component {
       return (
         <Textfield
           firstName={firstName}
-          lastName={lastName}
+          location={location}
+          age={age}
           email={email}
           phone={phone}
           github={github}
@@ -128,19 +130,27 @@ class Personal extends Component {
               placeholder="First Name"
               value={firstName}
               onChange={this.handleChange}
-              required
+            />
+          </label>
+          <label htmlFor="firstName">
+            <p>Age:</p>
+            <input
+              type="tel"
+              name="age"
+              placeholder="age"
+              value={age}
+              onChange={this.handleChange}
             />
           </label>
 
-          <label htmlFor="lastName">
+          <label htmlFor="location">
             <p>Location</p>
             <input
               type="text"
-              name="lastName"
+              name="location"
               placeholder="Campinas, Brazil"
-              value={lastName}
+              value={location}
               onChange={this.handleChange}
-              required
             />
           </label>
 
