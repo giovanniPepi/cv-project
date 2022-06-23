@@ -8,12 +8,7 @@ function Textfield(props) {
     return (
       <fieldset className="textfield">
         <div className="textfieldWrapper">
-          <img
-            src={props.img}
-            alt={"profile"}
-            width={"150px"}
-            height={"150px"}
-          ></img>
+          <img src={props.img} alt={"profile"} width={"var(--img)"}></img>
         </div>
         <div className="textfieldWrapper">
           <div>

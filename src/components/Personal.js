@@ -3,6 +3,7 @@ import Textfield from "./Textfield";
 import Icon from "@mdi/react";
 import About from "./About";
 import SaveBtn from "./SaveBtn";
+import DeleteBtn from "./DeleteBtn";
 
 class Personal extends Component {
   constructor(props) {
@@ -27,12 +28,25 @@ class Personal extends Component {
     const { name, value } = e.target; // enable editing, updates state to reflect input
     this.setState({ [name]: value });
   }
+
   handleSubmit(e) {
     e.preventDefault(); // prevents page reloading
     this.setState((prevState) => {
       return { editMode: !prevState.editMode }; // inverts the prevState
     });
   }
+
+  handleImgDelete = () => {
+    console.log("fuck");
+    this.setState({ img: null });
+
+    return (
+      <div className="innerFormUpload">
+        <h4>Upload profile photo</h4>
+        <input type="file" name="myImage" onChange={this.onImageChange} />
+      </div>
+    );
+  };
 
   onImageChange = (event) => {
     if (event.target.files && event.target.files[0]) {
@@ -77,20 +91,25 @@ class Personal extends Component {
         <div className="innerFormDiv">
           {/* Shows either the file picker of the chosen img */}
           {img ? (
-            <img
-              src={img}
-              alt={"profile"}
-              width={"150px"}
-              height={"150px"}
-            ></img>
+            <div>
+              <img
+                src={img}
+                alt={"profile"}
+                width={"200px"}
+                height={"100%"}
+              ></img>
+              <button
+                className="formBtn"
+                type="button"
+                onClick={this.handleImgDelete}
+              >
+                <DeleteBtn />
+              </button>
+            </div>
           ) : (
             <div className="innerFormUpload">
               <h4>Upload profile photo</h4>
-              <input
-                type="file"
-                name="myImage"
-                onChange={this.onImageChange}
-              />{" "}
+              <input type="file" name="myImage" onChange={this.onImageChange} />
             </div>
           )}
         </div>
