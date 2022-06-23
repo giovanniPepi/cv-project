@@ -126,7 +126,7 @@ label {
 }
 .textAboutMe {
   min-height: 5vh;
-  min-width: clamp(250px, 40rem, 50vw);
+  min-width: clamp(250px, 40rem, 45vw);
 }
 
 .formBtn {
