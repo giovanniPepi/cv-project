@@ -41,9 +41,7 @@ class Personal extends Component {
 
     return (
       <div className="innerFormUpload">
-        <h4>
-          Upload profile photo<h6>(optional)</h6>
-        </h4>
+        <h4>Upload profile photo</h4>
 
         <input type="file" name="myImage" onChange={this.onImageChange} />
       </div>
@@ -114,9 +112,7 @@ class Personal extends Component {
             </div>
           ) : (
             <div className="innerFormUpload">
-              <h4>
-                Upload profile photo<h6>(optional)</h6>
-              </h4>
+              <h4>Upload profile photo</h4>
               <input type="file" name="myImage" onChange={this.onImageChange} />
             </div>
           )}

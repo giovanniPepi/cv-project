@@ -74,7 +74,7 @@ class Skills extends Component {
             <SaveBtn />
           </button>
           <button
-            className="formBtn topEdit"
+            className="formBtn"
             type="button"
             onClick={() => handleDelete("skillsIds", id)}
           >
