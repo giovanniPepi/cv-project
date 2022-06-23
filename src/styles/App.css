@@ -138,6 +138,13 @@ label {
   flex-direction: column;
   gap: var(--innerGap);
 }
+.uploadedImg {
+  display: flex;
+  gap: var(--outerGap);
+}
+.deleteImg {
+  margin-bottom: 1rem;
+}
 
 /* 
 

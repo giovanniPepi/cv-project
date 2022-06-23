@@ -16,7 +16,14 @@ class DeleteBtn extends Component {
   render() {
     const { path, color, size, spin } = this.state;
 
-    return <Icon path={path} size={size} color={color} spin={spin} />;
+    // accepts new sizes
+    if (this.props.newSize) {
+      return (
+        <Icon path={path} size={this.props.newSize} color={color} spin={spin} />
+      );
+    } else {
+      return <Icon path={path} size={size} color={color} spin={spin} />;
+    }
   }
 }
 

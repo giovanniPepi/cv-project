@@ -91,7 +91,7 @@ class Personal extends Component {
         <div className="innerFormDiv">
           {/* Shows either the file picker of the chosen img */}
           {img ? (
-            <div>
+            <div className="uploadedImg">
               <img
                 src={img}
                 alt={"profile"}
@@ -99,11 +99,11 @@ class Personal extends Component {
                 height={"100%"}
               ></img>
               <button
-                className="formBtn"
+                className="formBtn deleteImg"
                 type="button"
                 onClick={this.handleImgDelete}
               >
-                <DeleteBtn />
+                <DeleteBtn newSize={"2rem"} />
               </button>
             </div>
           ) : (
