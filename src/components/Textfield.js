@@ -10,15 +10,15 @@ function Textfield(props) {
         <Imageuploader />
         <div className="textfieldWrapper">
           <div>
-            <span htmlFor="firstName"></span>
+            <span></span>
             {props.firstName}
           </div>
           <div>
-            <span htmlFor="lastName"></span>
+            <span></span>
             {props.lastName}
           </div>
           <div>
-            <span htmlFor="email"></span>
+            <span></span>
             {props.email}
           </div>
         </div>
@@ -27,21 +27,21 @@ function Textfield(props) {
           {/* phone is not required, therefore display only if present */}
           {props.phone ? (
             <div>
-              <span htmlFor="phone"></span>
+              <span></span>
               {props.phone}
             </div>
           ) : null}
 
           {props.github ? (
             <div>
-              <span htmlFor="gitHub">GitHub: </span>
+              <span>GitHub: </span>
               {props.github}
             </div>
           ) : null}
 
           {props.linkedin ? (
             <div>
-              <span htmlFor="linkedin">LinkedIn: </span>
+              <span>LinkedIn: </span>
               {props.linkedin}
             </div>
           ) : null}
@@ -172,6 +172,18 @@ function Textfield(props) {
             />
           </button>
         </div>
+      </fieldset>
+    );
+  } else if (props.aboutMe) {
+    return (
+      <fieldset className="textfield">
+        <div>
+          <span>About me: </span>
+          {props.aboutMe}
+        </div>
+        <button className="formBtn editBtn" onClick={props.handleEdit}>
+          <Icon path={mdiPencilOutline} size={0.9} color="#22C55E" spin={10} />
+        </button>
       </fieldset>
     );
   }

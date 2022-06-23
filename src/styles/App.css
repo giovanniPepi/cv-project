@@ -118,6 +118,9 @@ label {
   align-items: center;
   gap: var(--outerGap);
 }
+.aboutMe {
+  align-self: center;
+}
 
 /* 
 

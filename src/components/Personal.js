@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import Textfield from "./Textfield";
+import Icon from "@mdi/react";
+import { mdiContentSaveOutline, mdiDelete } from "@mdi/js";
+import About from "./About";
 
 class Personal extends Component {
   constructor(props) {
@@ -112,8 +115,7 @@ class Personal extends Component {
               onChange={this.handleChange}
             />
           </label>
-
-          <label htmlFor="linkedin">
+          <label>
             <p>LinkedIn</p>
             <input
               type="tel"
@@ -124,10 +126,21 @@ class Personal extends Component {
             />
           </label>
         </div>
-        <div className="btnContainer">
-          <button className="formBtn" type="submit">
-            Save & Continue to Photo
-          </button>
+        <div className="innerFormDiv">
+          <label>
+            <h4 className="sectionTitle">About me</h4>
+            <About />
+          </label>
+          <div className="btnContainer">
+            <button className="formBtn" type="submit">
+              <Icon
+                path={mdiContentSaveOutline}
+                size={0.9}
+                color="#22C55E"
+                spin={10}
+              />
+            </button>
+          </div>
         </div>
       </form>
     );

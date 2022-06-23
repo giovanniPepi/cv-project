@@ -1,7 +1,7 @@
 import Icon from "@mdi/react";
+import { mdiContentSaveOutline, mdiDelete } from "@mdi/js";
 import React, { Component } from "react";
 import Textfield from "./Textfield";
-import { mdiContentSaveOutline, mdiDelete } from "@mdi/js";
 
 class Skills extends Component {
   constructor(props) {
