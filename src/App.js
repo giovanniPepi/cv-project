@@ -5,8 +5,8 @@ import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
 import Icon from "@mdi/react";
-import { mdiFileFind, mdiPlusThick } from "@mdi/js";
 import style from "./styles/App.css";
+import AddBtn from "./components/AddBtn";
 
 class App extends Component {
   constructor(props) {
@@ -57,7 +57,7 @@ class App extends Component {
       <main className="App" id="mainForm">
         <section className="mainSection">
           <header className="header">CV Generator</header>
-          <h3 className="sectionTitle">General Info</h3>
+          <h3 className="sectionTitle">General</h3>
           <Personal />
 
           <h3 className="sectionTitle">
@@ -66,7 +66,7 @@ class App extends Component {
               className="addBtn"
               onClick={() => this.handleClick("skillsIds")}
             >
-              <Icon path={mdiPlusThick} size={0.9} color="#22C55E" spin={10} />
+              <AddBtn />
             </button>
           </h3>
           {skills}
@@ -77,7 +77,7 @@ class App extends Component {
               className="addBtn"
               onClick={() => this.handleClick("experienceIds")}
             >
-              <Icon path={mdiPlusThick} size={0.9} color="#22C55E" spin={10} />
+              <AddBtn />
             </button>
           </h3>
           {experiences}
@@ -88,7 +88,7 @@ class App extends Component {
               className="addBtn"
               onClick={() => this.handleClick("educationIds")}
             >
-              <Icon path={mdiPlusThick} size={0.9} color="#22C55E" spin={10} />
+              <AddBtn />
             </button>
           </h3>
           {educations}
@@ -98,9 +98,7 @@ class App extends Component {
               window.print();
             }}
             className="addBtn printBtn"
-          >
-            <Icon path={mdiFileFind} size={0.9} color="#22C55E" spin={10} />
-          </button>
+          ></button>
         </section>
       </main>
     );

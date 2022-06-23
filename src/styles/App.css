@@ -89,7 +89,6 @@ input {
   justify-content: center;
   align-items: center;
   gap: var(--innerGap);
-  background-color: var(--neutral2);
   padding: var(--outerPadding);
 }
 .skillForm {
@@ -127,7 +126,12 @@ label {
 }
 .textAboutMe {
   min-height: 5vh;
-  min-width: 50vw;
+  min-width: 40vw;
+  max-width: 60vw;
+}
+
+.formBtn {
+  margin-top: 2rem;
 }
 
 /* 
