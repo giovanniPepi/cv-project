@@ -129,7 +129,7 @@ label {
   min-width: clamp(250px, 40rem, 45vw);
 }
 
-.formBtn {
+.topEdit {
   margin-top: 2rem;
 }
 
@@ -138,12 +138,18 @@ label {
   flex-direction: column;
   gap: var(--innerGap);
 }
+
 .uploadedImg {
   display: flex;
   gap: var(--outerGap);
 }
+
 .deleteImg {
   margin-bottom: 1rem;
+}
+
+.description {
+  max-width: 30vw;
 }
 
 /* 

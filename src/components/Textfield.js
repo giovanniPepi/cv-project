@@ -1,5 +1,3 @@
-import Imageuploader from "./Imageuploader";
-import Icon from "@mdi/react";
 import EditBtn from "./EditBtn";
 
 // returns text areas tailored to each section based on the props receive
@@ -8,7 +6,12 @@ function Textfield(props) {
     return (
       <fieldset className="textfield">
         <div className="textfieldWrapper">
-          <img src={props.img} alt={"profile"} width={"var(--img)"}></img>
+          <img
+            src={props.img}
+            alt={"profile"}
+            width={"200px"}
+            height={"100%"}
+          ></img>
         </div>
         <div className="textfieldWrapper">
           <div>
@@ -80,42 +83,45 @@ function Textfield(props) {
   } else if (props.company) {
     return (
       <fieldset className="textfield">
-        <div>
-          <span>Company: </span>
-          {props.company}
+        <div className="textfieldWrapper">
+          <div>
+            <span>Company: </span>
+            {props.company}
+          </div>
+
+          <div>
+            <span>Position: </span>
+            {props.position}
+          </div>
+
+          {props.from ? (
+            <div>
+              <span>From: </span>
+              {props.from}
+            </div>
+          ) : null}
+
+          {props.from && props.to ? (
+            <div>
+              <span>To: </span>
+              {props.to}
+            </div>
+          ) : null}
+
+          {props.from && !props.to ? (
+            <div>
+              <span>Currently employed </span>
+            </div>
+          ) : null}
         </div>
-        {}
-        <div>
-          <span>Position: </span>
-          {props.position}
+
+        <div className="textfieldWrapper">
+          {props.description ? (
+            <div className="description">
+              <span>Description: {props.description}</span>
+            </div>
+          ) : null}
         </div>
-
-        {props.description ? (
-          <div>
-            <span>Description: </span>
-            {props.description}
-          </div>
-        ) : null}
-
-        {props.from ? (
-          <div>
-            <span>From: </span>
-            {props.from}
-          </div>
-        ) : null}
-
-        {props.from && props.to ? (
-          <div>
-            <span>To: </span>
-            {props.to}
-          </div>
-        ) : null}
-
-        {props.from && !props.to ? (
-          <div>
-            <span>Currently employed </span>
-          </div>
-        ) : null}
 
         <div>
           <button className="formBtn editBtn" onClick={props.handleEdit}>

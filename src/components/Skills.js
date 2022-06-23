@@ -70,12 +70,11 @@ class Skills extends Component {
           </label>
         </div>
         <div className="btnContainer">
-          {" "}
           <button className="formBtn skillsBtn" type="submit">
             <SaveBtn />
           </button>
           <button
-            className="formBtn"
+            className="formBtn topEdit"
             type="button"
             onClick={() => handleDelete("skillsIds", id)}
           >
