@@ -1,5 +1,4 @@
 import { Component } from "react";
-import PrintProvider, { NoPrint, Print } from "react-easy-print";
 import uniqid from "uniqid";
 import Personal from "./components/Personal";
 import Skills from "./components/Skills";
@@ -54,58 +53,43 @@ class App extends Component {
 
     return (
       <main className="App" id="mainForm">
-        <PrintProvider>
-          <NoPrint>
-            <section className="mainSection">
-              <header className="header">
-                <h2>CV Generator</h2>
-              </header>
-              <Print>
-                <h3 className="sectionTitle">General Info</h3>
-                <Personal />
-              </Print>
-              <Print>
-                <h3 className="sectionTitle">Skills</h3>
-                {skills}
-              </Print>
-
-              <button
-                className="addBtn"
-                onClick={() => this.handleClick("skillsIds")}
-              >
-                Add Skill
-              </button>
-              <Print>
-                <h3 className="sectionTitle">Experience</h3>
-                {experiences}
-              </Print>
-              <button
-                className="addBtn"
-                onClick={() => this.handleClick("experienceIds")}
-              >
-                Add Experience
-              </button>
-              <Print>
-                <h3 className="sectionTitle">Education</h3>
-                {educations}
-              </Print>
-              <button
-                className="addBtn"
-                onClick={() => this.handleClick("educationIds")}
-              >
-                Add Education
-              </button>
-              <button
-                onClick={() => {
-                  window.print();
-                }}
-                className="addBtn printBtn"
-              >
-                Print
-              </button>
-            </section>
-          </NoPrint>
-        </PrintProvider>
+        <section className="mainSection">
+          <header className="header">CV Generator</header>
+          <h3 className="sectionTitle">General Info</h3>
+          <Personal />
+          <h3 className="sectionTitle">Skills</h3>
+          {skills}
+          <button
+            className="addBtn"
+            onClick={() => this.handleClick("skillsIds")}
+          >
+            Add Skill
+          </button>
+          <h3 className="sectionTitle">Experience</h3>
+          {experiences}
+          <button
+            className="addBtn"
+            onClick={() => this.handleClick("experienceIds")}
+          >
+            Add Experience
+          </button>
+          <h3 className="sectionTitle">Education</h3>
+          {educations}
+          <button
+            className="addBtn"
+            onClick={() => this.handleClick("educationIds")}
+          >
+            Add Education
+          </button>
+          <button
+            onClick={() => {
+              window.print();
+            }}
+            className="addBtn printBtn"
+          >
+            Go to Print Page
+          </button>
+        </section>
       </main>
     );
   }

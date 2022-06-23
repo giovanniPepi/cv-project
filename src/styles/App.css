@@ -13,6 +13,8 @@
   --zinc2: #f4f4f5;
   --outerGap: 1rem;
   --innerGap: 0.5rem;
+  --miniGap: 0.3rem;
+  --miniPadding: 0.3rem;
   --outerPadding: 0.5rem;
   --innerPadding: 1rem;
   --borders: 1px dotted black;
@@ -42,43 +44,54 @@ button {
   border: none;
 }
 
-.header {
+input {
+  max-width: 25vw;
+}
+
+.mainSection {
   display: flex;
-  width: 100%;
+  flex-direction: column;
   justify-content: center;
+  gap: var(--outerGap);
+}
+.header {
+  width: 100%;
   background-color: var(--slate7);
   font-size: var(--fontSizeTitle);
   color: white;
   padding: var(--outerPadding);
 }
 
-/*Center entire div*/
-.mainSection {
+.sectionTitle {
+  align-self: center;
+}
+.personalForm,
+.skillForm,
+.experienceForm,
+.educationForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: var(--innerGap);
+  background-color: var(--neutral2);
+  padding: var(--miniPadding);
+}
+.innerFormDiv {
+  display: flex;
   gap: var(--outerGap);
 }
-.sectionTitle {
-  font-size: var(--fontSizeTitle);
-  background-color: var(--neutral5);
-  background-color: var(--slate5);
-  color: white;
-}
-/*ensures that each section has the same width */
-.personalForm,
-.experienceForm,
-.educationForm,
-.sectionTitle {
+label {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: var(--outerPadding);
-  min-width: 90vw;
-  max-width: 90vw;
-  border: var(--borders);
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--miniGap);
 }
+
+/* 
+
+
 .personalForm,
 .experienceForm,
 .educationForm,
@@ -97,7 +110,6 @@ label {
   background-color: var(--slate5);
   padding: var(--outerPadding);
   border: var(--borders);
-  border-radius: 15%;
   color: white;
 }
 
@@ -135,7 +147,7 @@ label {
   gap: var(--innerGap);
   max-width: 90vw;
 }
-/* ----------------------------------------------> photo */
+
 .uploadArea {
   display: flex;
   flex-direction: column;
@@ -169,15 +181,15 @@ label {
   gap: 0.1rem;
 }
 
-/*Prevents overflowing inside img*/
+Prevents overflowing inside img
 .imgInpt {
   max-width: 50px;
   font-size: 8px;
 }
-/* ----------------------------------------------> */
 
-/* Prevents overflow on print mode */
+
+ Prevents overflow on print mode 
 .printWarning {
   padding: var(--outerPadding);
   max-width: 85vw;
-}
+} */ ;

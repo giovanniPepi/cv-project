@@ -1,4 +1,3 @@
-import { NoPrint } from "react-easy-print";
 import Imageuploader from "./Imageuploader";
 
 // returns text areas tailored to each section based on the props receive
@@ -45,13 +44,11 @@ function Textfield(props) {
             </div>
           ) : null}
         </div>
-        <NoPrint>
-          <div>
-            <button className="formBtn editBtn" onClick={props.handleEdit}>
-              Edit
-            </button>
-          </div>
-        </NoPrint>
+        <div>
+          <button className="formBtn editBtn" onClick={props.handleEdit}>
+            Edit
+          </button>
+        </div>
       </fieldset>
     );
   } else if (props.skill) {
@@ -69,13 +66,11 @@ function Textfield(props) {
           </div>
         ) : null}
 
-        <NoPrint>
-          <div>
-            <button className="formBtn editBtn" onClick={props.handleEdit}>
-              Edit
-            </button>
-          </div>
-        </NoPrint>
+        <div>
+          <button className="formBtn editBtn" onClick={props.handleEdit}>
+            Edit
+          </button>
+        </div>
       </fieldset>
     );
   } else if (props.company) {
@@ -118,13 +113,11 @@ function Textfield(props) {
           </div>
         ) : null}
 
-        <NoPrint>
-          <div>
-            <button className="formBtn editBtn" onClick={props.handleEdit}>
-              Edit
-            </button>
-          </div>
-        </NoPrint>
+        <div>
+          <button className="formBtn editBtn" onClick={props.handleEdit}>
+            Edit
+          </button>
+        </div>
       </fieldset>
     );
   } else if (props.institution) {
@@ -157,13 +150,11 @@ function Textfield(props) {
             <span>Currently enrolled </span>
           </div>
         ) : null}
-        <NoPrint>
-          <div>
-            <button className="formBtn editBtn" onClick={props.handleEdit}>
-              Edit
-            </button>
-          </div>
-        </NoPrint>
+        <div>
+          <button className="formBtn editBtn" onClick={props.handleEdit}>
+            Edit
+          </button>
+        </div>
       </fieldset>
     );
   }

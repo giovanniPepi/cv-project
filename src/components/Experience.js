@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import Textfield from "./Textfield";
-import { NoPrint } from "react-easy-print";
-import Printwarning from "./PrintWarning";
 
 class Experience extends Component {
   constructor(props) {
@@ -48,33 +46,51 @@ class Experience extends Component {
     }
 
     return (
-      <NoPrint>
-        <Printwarning company={true} />
-        <form className="experienceForm" action="" onSubmit={this.handleSubmit}>
-          <div className="innerFormDiv">
-            <label htmlFor="company">
-              <p>Company</p>
-              <input
-                type="text"
-                name="company"
-                value={company}
-                onChange={this.handleChange}
-                required
-              />
-            </label>
+      <form className="experienceForm" action="" onSubmit={this.handleSubmit}>
+        <div className="innerFormDiv">
+          <label htmlFor="company">
+            <p>Company</p>
+            <input
+              type="text"
+              name="company"
+              value={company}
+              onChange={this.handleChange}
+              required
+            />
+          </label>
 
-            <label htmlFor="position">
-              <p>Position</p>
-              <input
-                type="text"
-                name="position"
-                value={position}
-                onChange={this.handleChange}
-                required
-              />
-            </label>
-          </div>
+          <label htmlFor="position">
+            <p>Position</p>
+            <input
+              type="text"
+              name="position"
+              value={position}
+              onChange={this.handleChange}
+              required
+            />
+          </label>
+          <label htmlFor="from">
+            <p>From</p>
+            <input
+              type="date"
+              name="from"
+              value={from}
+              onChange={this.handleChange}
+            />
+          </label>
 
+          <label htmlFor="to">
+            <p>To</p>
+            <input
+              type="date"
+              name="to"
+              value={to}
+              onChange={this.handleChange}
+            />
+          </label>
+        </div>
+
+        <div className="innerFormDiv">
           <label htmlFor="description">
             <p>Description</p>
             <input
@@ -84,41 +100,19 @@ class Experience extends Component {
               onChange={this.handleChange}
             />
           </label>
+        </div>
 
-          <div className="innerFormDiv">
-            <label htmlFor="from">
-              <p>From</p>
-              <input
-                type="date"
-                name="from"
-                value={from}
-                onChange={this.handleChange}
-              />
-            </label>
-
-            <label htmlFor="to">
-              <p>To</p>
-              <input
-                type="date"
-                name="to"
-                value={to}
-                onChange={this.handleChange}
-              />
-            </label>
-          </div>
-
-          <button className="formBtn experienceBtn" type="submit">
-            Save
-          </button>
-          <button
-            className="formBtn"
-            type="button"
-            onClick={() => handleDelete("experienceIds", id)}
-          >
-            Delete
-          </button>
-        </form>
-      </NoPrint>
+        <button className="formBtn experienceBtn" type="submit">
+          Save
+        </button>
+        <button
+          className="formBtn"
+          type="button"
+          onClick={() => handleDelete("experienceIds", id)}
+        >
+          Delete
+        </button>
+      </form>
     );
   }
 }

@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { NoPrint } from "react-easy-print";
-import Printwarning from "./PrintWarning";
 import Textfield from "./Textfield";
 
 class Skills extends Component {
@@ -45,31 +43,31 @@ class Skills extends Component {
     }
 
     return (
-      <NoPrint>
-        <Printwarning skill={true} />
-        <form className="skillForm" action="" onSubmit={this.handleSubmit}>
-          <fieldset className="innerFormDiv">
-            <label htmlFor="skill">
-              <p>Skill</p>
-              <input
-                type="text"
-                name="skill"
-                value={skill}
-                onChange={this.handleChange}
-                required
-              />
-            </label>
+      <form className="skillForm" action="" onSubmit={this.handleSubmit}>
+        <div className="innerFormDiv">
+          <label htmlFor="skill">
+            <p>Skill</p>
+            <input
+              type="text"
+              name="skill"
+              value={skill}
+              onChange={this.handleChange}
+              required
+            />
+          </label>
 
-            <label htmlFor="description">
-              <p>Description</p>
-              <input
-                type="text"
-                name="description"
-                value={description}
-                onChange={this.handleChange}
-              />
-            </label>
-          </fieldset>
+          <label htmlFor="description">
+            <p>Description</p>
+            <input
+              type="text"
+              name="description"
+              value={description}
+              onChange={this.handleChange}
+            />
+          </label>
+        </div>
+        <div className="btnContainer">
+          {" "}
           <button className="formBtn skillsBtn" type="submit">
             Save
           </button>
@@ -80,8 +78,8 @@ class Skills extends Component {
           >
             Delete
           </button>
-        </form>
-      </NoPrint>
+        </div>
+      </form>
     );
   }
 }

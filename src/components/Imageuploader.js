@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { NoPrint } from "react-easy-print";
 
 /* credits: https://stackoverflow.com/questions/43692479/how-to-upload-an-image-in-react-js */
 
@@ -8,11 +7,9 @@ const Imageuploader = () => {
 
   return (
     <div className="uploadArea">
-      <NoPrint>
-        <h5 className="photoTitleWrapper">
-          Photo <h5>(optional)</h5>
-        </h5>
-      </NoPrint>
+      <h5 className="photoTitleWrapper">
+        Photo <h5>(optional)</h5>
+      </h5>
       {selectedImage && (
         <div className="cvImgDiv">
           <img
@@ -21,31 +18,27 @@ const Imageuploader = () => {
             className="cvImg"
             src={URL.createObjectURL(selectedImage)}
           />
-          <NoPrint>
-            <div className="removeWrapper">
-              <button
-                className="formBtn"
-                onClick={() => {
-                  setSelectedImage(null);
-                }}
-              >
-                Remove
-              </button>
-            </div>
-          </NoPrint>
+          <div className="removeWrapper">
+            <button
+              className="formBtn"
+              onClick={() => {
+                setSelectedImage(null);
+              }}
+            >
+              Remove
+            </button>
+          </div>
         </div>
       )}
-      <NoPrint>
-        <input
-          className="imgInpt"
-          type="file"
-          name="cvImg"
-          onChange={(event) => {
-            console.log(event.target.files[0]);
-            setSelectedImage(event.target.files[0]);
-          }}
-        />
-      </NoPrint>
+      <input
+        className="imgInpt"
+        type="file"
+        name="cvImg"
+        onChange={(event) => {
+          console.log(event.target.files[0]);
+          setSelectedImage(event.target.files[0]);
+        }}
+      />
     </div>
   );
 };
