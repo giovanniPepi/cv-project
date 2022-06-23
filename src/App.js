@@ -7,6 +7,7 @@ import Education from "./components/Education";
 import Icon from "@mdi/react";
 import style from "./styles/App.css";
 import AddBtn from "./components/AddBtn";
+import PreviewBtn from "./components/PreviewBtn";
 
 class App extends Component {
   constructor(props) {
@@ -98,7 +99,9 @@ class App extends Component {
               window.print();
             }}
             className="addBtn printBtn"
-          ></button>
+          >
+            <PreviewBtn />
+          </button>
         </section>
       </main>
     );
