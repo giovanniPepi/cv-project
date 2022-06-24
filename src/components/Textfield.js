@@ -43,7 +43,7 @@ function Textfield(props) {
     );
   } else if (props.skill) {
     return (
-      <div className="textfield">
+      <div className="textfield skill">
         {props.description ? (
           <div>
             <li>
@@ -53,10 +53,11 @@ function Textfield(props) {
           </div>
         ) : (
           <div>
-            <em>{props.skill}</em>:
+            <li>
+              <strong>{props.skill}</strong>
+            </li>
           </div>
         )}
-
         <div>
           <button className="formBtn editBtn" onClick={props.handleEdit}>
             <EditBtn />
