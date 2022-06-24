@@ -200,3 +200,12 @@ label {
   flex-direction: row;
   max-width: 70vw;
 }
+.company {
+  display: flex;
+  align-self: flex-start;
+}
+
+.description {
+  word-wrap: break-word;
+  max-width: 70vw;
+}

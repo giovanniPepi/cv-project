@@ -68,43 +68,31 @@ function Textfield(props) {
   } else if (props.company) {
     return (
       <div className="textfield">
-        <div className="textfieldWrapper">
-          <div>
-            <span>Company: </span>
-            {props.company}
+        <div className="textfieldWrapper company">
+          <div className="company">
+            <strong>{props.company}</strong>- {props.position}
           </div>
+        </div>
 
-          <div>
-            <span>Position: </span>
-            {props.position}
-          </div>
-
-          {props.from ? (
-            <div>
-              <span>From: </span>
-              {props.from}
-            </div>
-          ) : null}
-
+        <div className="textfieldWrapper company">
           {props.from && props.to ? (
-            <div>
-              <span>To: </span>
-              {props.to}
-            </div>
-          ) : null}
-
-          {props.from && !props.to ? (
-            <div>
-              <span>Currently employed </span>
+            <div className="company">
+              {props.from} - {props.to}
             </div>
           ) : null}
         </div>
 
-        <div className="textfieldWrapper">
-          {props.description ? (
-            <div className="description">
-              <span>Description: {props.description}</span>
+        <div className="textfieldWrapper company">
+          {props.from && !props.to ? (
+            <div className="company">
+              <em>{props.from} - current </em>
             </div>
+          ) : null}
+        </div>
+
+        <div className="textfieldWrapper company">
+          {props.description ? (
+            <div className="description">{props.description}</div>
           ) : null}
         </div>
 
