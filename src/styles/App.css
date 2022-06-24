@@ -59,7 +59,7 @@ button {
 }
 
 input {
-  max-width: 25vw;
+  max-width: 30vw;
 }
 
 .mainSection {
@@ -126,7 +126,7 @@ label {
 }
 .textAboutMe {
   min-height: 5vh;
-  min-width: clamp(250px, 40rem, 45vw);
+  min-width: clamp(250px, 404px, 41vw);
 }
 
 .topEdit {
@@ -159,108 +159,18 @@ label {
   display: flex;
   flex-direction: column;
 }
-
-/* 
-
-
-.personalForm,
-.experienceForm,
-.educationForm,
-.innerFormDiv {
-  background-color: var(--zinc2);
-}
-
-label {
+.personalInputWrapper {
   display: flex;
   flex-direction: column;
-  gap: var(--innerGap);
-}
-
-.formBtn,
-.addBtn {
-  background-color: var(--slate5);
-  padding: var(--outerPadding);
-  border: var(--borders);
-  color: white;
-}
-
-.innerFormDiv {
-  display: flex;
-  flex-direction: column;
-  padding: var(--innerPadding);
-  gap: var(--outerGap);
-}
-
-.printBtn {
-  border: var(--borders);
-  padding: var(--outerPadding);
-  border-radius: 15%;
-  font-size: var(--fontSizeTitle);
-  background-color: var(--slate7);
-  color: white;
-  width: 10vw;
-}
-
-.textfield {
-  display: flex;
-  justify-content: space-between;
-  padding: var(--outerPadding);
-  gap: var(--outerGap);
-  min-width: 90vw;
-  max-width: 90vw;
-  border: var(--borders);
-}
-
-.textfieldWrapper {
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-  gap: var(--innerGap);
-  max-width: 90vw;
-}
-
-.uploadArea {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 150px;
-  align-self: flex-start;
-  flex: 0;
-}
-.cvImg {
-  border: 1px solid black;
-  min-height: 100px;
-  min-width: 100px;
-  max-height: 100px;
-  max-width: 100px;
-}
-.textfieldWrapper {
-  flex: 1;
-  margin-bottom: 2.5rem;
-}
-
-.removeWrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0.5rem;
-}
-.photoTitleWrapper {
-  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.1rem;
+}
+#ageInpt {
+  max-width: 30px;
 }
 
-Prevents overflowing inside img
-.imgInpt {
-  max-width: 50px;
-  font-size: 8px;
+/*Forces it to stay the same size as the div on mobile/PC*/
+#nameInpt,
+#locationInpt {
+  max-width: clamp(86px, 163px, 20vw);
 }
-
-
- Prevents overflow on print mode 
-.printWarning {
-  padding: var(--outerPadding);
-  max-width: 85vw;
-} */ ;

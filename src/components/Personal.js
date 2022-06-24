@@ -8,7 +8,7 @@ class Personal extends Component {
     super(props);
     this.state = {
       editMode: true,
-      firstName: "",
+      name: "",
       location: "",
       email: "",
       phone: "",
@@ -60,7 +60,7 @@ class Personal extends Component {
   render() {
     const {
       editMode,
-      firstName,
+      name,
       age,
       location,
       email,
@@ -75,7 +75,7 @@ class Personal extends Component {
     if (!editMode) {
       return (
         <Textfield
-          firstName={firstName}
+          firstName={name}
           location={location}
           age={age}
           email={email}
@@ -117,87 +117,92 @@ class Personal extends Component {
             </div>
           )}
         </div>
-        <div className="innerFormDiv">
-          <label htmlFor="firstName">
-            <p>Name:</p>
-            <input
-              type="text"
-              name="firstName"
-              placeholder="First Name"
-              value={firstName}
-              onChange={this.handleChange}
-            />
-          </label>
+        <div className="personalInputWrapper">
+          <div className="innerFormDiv">
+            <label htmlFor="name">
+              <p>Name</p>
+              <input
+                id="nameInpt"
+                type="text"
+                name="name"
+                placeholder="John Smith"
+                value={name}
+                onChange={this.handleChange}
+              />
+            </label>
 
-          <label htmlFor="firstName">
-            <p>Age:</p>
-            <input
-              type="tel"
-              name="age"
-              placeholder="age"
-              value={age}
-              onChange={this.handleChange}
-            />
-          </label>
+            <label htmlFor="age">
+              <p>Age</p>
+              <input
+                id="ageInpt"
+                type="tel"
+                name="age"
+                placeholder="30"
+                value={age}
+                onChange={this.handleChange}
+              />
+            </label>
 
-          <label htmlFor="location">
-            <p>Location</p>
-            <input
-              type="text"
-              name="location"
-              placeholder="Campinas, Brazil"
-              value={location}
-              onChange={this.handleChange}
-            />
-          </label>
-        </div>
+            <label htmlFor="location">
+              <p>Location</p>
+              <input
+                id="locationInpt"
+                type="text"
+                name="location"
+                placeholder="Campinas, Brazil"
+                value={location}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
 
-        <div className="innerFormDiv">
-          <label htmlFor="email">
-            <p>Email</p>
-            <input
-              type="email"
-              name="email"
-              placeholder="example@domain.com"
-              value={email}
-              onChange={this.handleChange}
-              required
-            />
-          </label>
+          <div className="innerFormDiv">
+            <label htmlFor="email">
+              <p>Email</p>
+              <input
+                type="email"
+                name="email"
+                placeholder="example@domain.com"
+                value={email}
+                onChange={this.handleChange}
+                required
+              />
+            </label>
 
-          <label htmlFor="phone">
-            <p>Phone</p>
-            <input
-              type="tel"
-              name="phone"
-              placeholder="+55 19 989822222"
-              value={phone}
-              onChange={this.handleChange}
-            />
-          </label>
-        </div>
+            <label htmlFor="phone">
+              <p>Phone</p>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="+55 (19) 98787-5454"
+                value={phone}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
 
-        <div className="innerFormDiv">
-          <label htmlFor="gitHub">
-            <p>GitHub</p>
-            <input
-              type="text"
-              name="github"
-              placeholder="github.com/yourUser"
-              value={github}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label htmlFor="linkedin">
-            <p>LinkedIn</p>
-            <input
-              type="text"
-              name="linkedin"
-              placeholder="linkedin.com/in/user"
-              value={linkedin}
-              onChange={this.handleChange}
-            />
-          </label>
+          <div className="innerFormDiv">
+            <label htmlFor="gitHub">
+              <p>GitHub</p>
+              <input
+                type="text"
+                name="github"
+                placeholder="user"
+                value={github}
+                onChange={this.handleChange}
+              />
+            </label>
+            <label htmlFor="linkedin">
+              <p>LinkedIn</p>
+              <input
+                type="text"
+                name="linkedin"
+                placeholder="user"
+                value={linkedin}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
         </div>
 
         <label htmlFor="aboutMe">
