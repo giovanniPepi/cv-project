@@ -34,7 +34,6 @@ body {
 }
 
 .App {
-  min-height: 100%;
   max-width: 100vw;
 }
 
@@ -96,6 +95,10 @@ h2 {
   gap: var(--innerGap);
   padding: var(--outerPadding);
 }
+.personalForm {
+  align-items: center;
+  align-self: center;
+}
 .skillForm {
   flex-direction: row;
   align-items: center;
@@ -147,12 +150,15 @@ label {
   align-items: center;
   gap: var(--outerGap);
 }
-.aboutMe {
-  align-self: center;
-}
+
 .textAboutMe {
-  min-height: 8vh;
-  min-width: clamp(250px, 404px, 41vw);
+  height: 7vh;
+}
+
+.labelAbout {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
 }
 
 .topEdit {

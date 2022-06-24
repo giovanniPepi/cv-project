@@ -210,18 +210,16 @@ class Personal extends Component {
           </div>
         </div>
 
-        <label htmlFor="aboutMe">
+        <div className="labelAbout">
           <h4 className="sectionTitle">Goal</h4>
-          <div className="innerFormDiv">
-            <textarea
-              className="textAboutMe"
-              name="aboutMe"
-              placeholder="Write a short description about the position you want to work on, career goals, etc"
-              value={aboutMe}
-              onChange={this.handleChange}
-            />
-          </div>
-        </label>
+          <textarea
+            className="textAboutMe"
+            name="aboutMe"
+            placeholder="Write a short description about the position you want to work on, career goals, etc"
+            value={aboutMe}
+            onChange={this.handleChange}
+          />
+        </div>
 
         <div className="btnContainer">
           <button className="formBtn" type="submit">
