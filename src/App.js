@@ -56,7 +56,9 @@ class App extends Component {
     return (
       <main className="App" id="mainForm">
         <section className="mainSection">
-          <header className="header">CV Generator</header>
+          <header className="header">
+            <h2>CV Generator</h2>
+          </header>
           <h3 className="sectionTitle">General</h3>
           <Personal />
 

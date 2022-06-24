@@ -49,6 +49,7 @@ fieldset {
   margin: 0;
   padding: 0;
 }
+
 h3 {
   font-size: var(--fontSizeTitle);
 }
@@ -73,8 +74,12 @@ input {
   font-size: var(--fontSizeTitle);
   color: white;
   padding: var(--outerPadding);
+  display: flex;
+  flex-direction: column;
 }
-
+h2 {
+  align-self: center;
+}
 .sectionTitle {
   align-self: center;
   display: flex;
@@ -125,7 +130,7 @@ label {
   align-self: center;
 }
 .textAboutMe {
-  min-height: 5vh;
+  min-height: 8vh;
   min-width: clamp(250px, 404px, 41vw);
 }
 

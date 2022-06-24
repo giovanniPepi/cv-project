@@ -41,7 +41,7 @@ class Personal extends Component {
 
     return (
       <div className="innerFormUpload">
-        <h4>Upload profile photo</h4>
+        <h4>Profile photo</h4>
 
         <input type="file" name="myImage" onChange={this.onImageChange} />
       </div>
@@ -165,7 +165,6 @@ class Personal extends Component {
                 placeholder="example@domain.com"
                 value={email}
                 onChange={this.handleChange}
-                required
               />
             </label>
 
@@ -193,7 +192,13 @@ class Personal extends Component {
               />
             </label>
             <label htmlFor="linkedin">
-              <p>LinkedIn</p>
+              <a
+                href="https://www.linkedin.com/pulse/how-simplify-your-linkedin-url-brenda-meller-zawacki-/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Linkedin
+              </a>
               <input
                 type="text"
                 name="linkedin"
@@ -211,7 +216,7 @@ class Personal extends Component {
             <textarea
               className="textAboutMe"
               name="aboutMe"
-              placeholder="Something interesting..."
+              placeholder="Write a short description about the position you want to work on, career goals, etc"
               value={aboutMe}
               onChange={this.handleChange}
             />

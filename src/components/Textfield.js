@@ -1,4 +1,5 @@
 import EditBtn from "./EditBtn";
+import { Link, Router } from "react-router-dom";
 
 // returns text areas tailored to each section based on the props receive
 function Textfield(props) {
@@ -36,17 +37,11 @@ function Textfield(props) {
             </div>
           ) : null}
 
-          {props.github ? (
-            <div>
-              <span>GitHub: </span>
-              {props.github}
-            </div>
-          ) : null}
+          {props.github ? <span>github.com/{props.github}</span> : null}
 
           {props.linkedin ? (
             <div>
-              <span>LinkedIn: </span>
-              {props.linkedin}
+              <span>www.linkedin.com/in/{props.linkedin}</span>
             </div>
           ) : null}
         </div>
