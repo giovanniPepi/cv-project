@@ -69,7 +69,7 @@ class Skills extends Component {
             />
           </label>
         </div>
-        <div className="btnContainer">
+        <div className="btnContainer skillsbtncontainer">
           <button className="formBtn skillsBtn" type="submit">
             <SaveBtn />
           </button>

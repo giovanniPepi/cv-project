@@ -98,6 +98,7 @@ h2 {
 }
 .skillForm {
   flex-direction: row;
+  align-items: center;
 }
 .innerFormDiv {
   display: flex;
@@ -113,6 +114,23 @@ label {
 }
 .btnContainer {
   display: flex;
+}
+
+@media screen and (min-width: 1060px) {
+  .skillForm {
+    flex-direction: row;
+  }
+  .skillsbtncontainer {
+    align-self: flex-end;
+  }
+}
+@media screen and (max-width: 1060px) {
+  .skillForm {
+    flex-direction: column;
+  }
+  .skillsbtncontainer {
+    align-self: center;
+  }
 }
 
 .addBtn {

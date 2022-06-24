@@ -99,6 +99,7 @@ class Experience extends Component {
             <p>Description</p>
             <textarea
               type="text"
+              className="textAboutMe"
               name="description"
               value={description}
               onChange={this.handleChange}
