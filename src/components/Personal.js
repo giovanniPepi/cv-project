@@ -128,6 +128,7 @@ class Personal extends Component {
               onChange={this.handleChange}
             />
           </label>
+
           <label htmlFor="firstName">
             <p>Age:</p>
             <input
@@ -149,7 +150,9 @@ class Personal extends Component {
               onChange={this.handleChange}
             />
           </label>
+        </div>
 
+        <div className="innerFormDiv">
           <label htmlFor="email">
             <p>Email</p>
             <input
@@ -161,9 +164,7 @@ class Personal extends Component {
               required
             />
           </label>
-        </div>
 
-        <div className="innerFormDiv">
           <label htmlFor="phone">
             <p>Phone</p>
             <input
@@ -174,7 +175,9 @@ class Personal extends Component {
               onChange={this.handleChange}
             />
           </label>
+        </div>
 
+        <div className="innerFormDiv">
           <label htmlFor="gitHub">
             <p>GitHub</p>
             <input
@@ -185,10 +188,10 @@ class Personal extends Component {
               onChange={this.handleChange}
             />
           </label>
-          <label>
+          <label htmlFor="linkedin">
             <p>LinkedIn</p>
             <input
-              type="tel"
+              type="text"
               name="linkedin"
               placeholder="linkedin.com/in/user"
               value={linkedin}
@@ -196,7 +199,8 @@ class Personal extends Component {
             />
           </label>
         </div>
-        <label>
+
+        <label htmlFor="aboutMe">
           <h4 className="sectionTitle">Goal</h4>
           <div className="innerFormDiv">
             <textarea
@@ -208,6 +212,7 @@ class Personal extends Component {
             />
           </div>
         </label>
+
         <div className="btnContainer">
           <button className="formBtn" type="submit">
             <SaveBtn />
