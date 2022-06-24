@@ -77,7 +77,9 @@ function Textfield(props) {
         <div className="textfieldWrapper company">
           {props.from && props.to ? (
             <div className="company">
-              {props.from} - {props.to}
+              <em>
+                {props.from} - {props.to}
+              </em>
             </div>
           ) : null}
         </div>
@@ -107,32 +109,33 @@ function Textfield(props) {
     return (
       <div className="textfield">
         <div>
-          <span>Title: </span>
-          {props.school}
+          <strong>{props.title}</strong> - {props.institution}
         </div>
-        <div>
-          <span>Institution: </span>
-          {props.institution}
+
+        <div className="textfieldWrapper company">
+          {props.from && props.to ? (
+            <div className="company">
+              <em>
+                {props.from} - {props.to}
+              </em>
+            </div>
+          ) : null}
         </div>
-        {props.from ? (
-          <div>
-            <span>From: </span>
-            {props.from}
-          </div>
-        ) : null}
 
-        {props.from && props.to ? (
-          <div>
-            <span>To: </span>
-            {props.to}
-          </div>
-        ) : null}
+        <div className="textfieldWrapper company">
+          {props.from && !props.to ? (
+            <div className="company">
+              <em>{props.from} - current </em>
+            </div>
+          ) : null}
+        </div>
 
-        {props.from && !props.to ? (
-          <div>
-            <span>Currently enrolled </span>
-          </div>
-        ) : null}
+        <div className="textfieldWrapper company">
+          {props.description ? (
+            <div className="description">{props.description}</div>
+          ) : null}
+        </div>
+
         <div>
           <button className="formBtn editBtn" onClick={props.handleEdit}>
             <EditBtn />
