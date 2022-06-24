@@ -62,6 +62,11 @@ input {
   max-width: 30vw;
 }
 
+li {
+  max-width: 60vw;
+  word-wrap: break-word;
+}
+
 .mainSection {
   display: flex;
   flex-direction: column;
@@ -193,4 +198,5 @@ label {
 
 .skill {
   flex-direction: row;
+  max-width: 70vw;
 }
