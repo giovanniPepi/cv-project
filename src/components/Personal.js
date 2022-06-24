@@ -92,7 +92,7 @@ class Personal extends Component {
     // constructed when edit mode is on
     return (
       <form className="personalForm" action="" onSubmit={this.handleSubmit}>
-        <div className="innerFormDiv">
+        <div className="innerFormDiv first">
           {/* Shows either the file picker of the chosen img */}
           {img ? (
             <div className="uploadedImg">

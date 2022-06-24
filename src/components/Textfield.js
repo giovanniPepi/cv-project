@@ -1,12 +1,10 @@
 import EditBtn from "./EditBtn";
-import { Link, Router } from "react-router-dom";
 
 // returns text areas tailored to each section based on the props receive
 function Textfield(props) {
   if (props.firstName) {
     return (
-      <fieldset className="textfield top">
-        {/* main section wrapper in flex=column*/}
+      <div className="textfield top">
         <div className="textfieldWrapper">
           <img
             src={props.img}
@@ -17,50 +15,35 @@ function Textfield(props) {
         </div>
         <div className="textfieldWrapper">
           <div>
-            <span></span>
-            {props.firstName}, {props.age} years old
+            <strong>{props.firstName}</strong>, {props.age} years old
           </div>
-          <div>
-            <span></span>
-            {props.lastName}
-          </div>
-          <div>
-            <span></span>
-            {props.email}
-          </div>
+          <div>{props.email}</div>
 
           {/* phone is not required, therefore display only if present */}
-          {props.phone ? (
-            <div>
-              <span></span>
-              {props.phone}
-            </div>
-          ) : null}
+          {props.phone ? <div>{props.phone}</div> : null}
 
-          {props.github ? <span>github.com/{props.github}</span> : null}
+          {props.github ? <em>github.com/{props.github}</em> : null}
 
           {props.linkedin ? (
             <div>
-              <span>www.linkedin.com/in/{props.linkedin}</span>
+              <em>www.linkedin.com/in/{props.linkedin}</em>
             </div>
           ) : null}
         </div>
         <div className="sectionTitle">
           <h3 className="sectionTitle">Goal:</h3>
         </div>
-        <div className="textfieldWrapper goal">
-          <span>{props.aboutMe}</span>
-        </div>
+        <div className="textfieldWrapper goal">{props.aboutMe}</div>
         <div>
           <button className="formBtn editBtn" onClick={props.handleEdit}>
             <EditBtn />
           </button>
         </div>
-      </fieldset>
+      </div>
     );
   } else if (props.skill) {
     return (
-      <fieldset className="textfield">
+      <div className="textfield">
         <div>
           <span>Skill: </span>
           {props.skill}
@@ -78,11 +61,11 @@ function Textfield(props) {
             <EditBtn />
           </button>
         </div>
-      </fieldset>
+      </div>
     );
   } else if (props.company) {
     return (
-      <fieldset className="textfield">
+      <div className="textfield">
         <div className="textfieldWrapper">
           <div>
             <span>Company: </span>
@@ -128,11 +111,11 @@ function Textfield(props) {
             <EditBtn />
           </button>
         </div>
-      </fieldset>
+      </div>
     );
   } else if (props.institution) {
     return (
-      <fieldset className="textfield">
+      <div className="textfield">
         <div>
           <span>Title: </span>
           {props.school}
@@ -165,7 +148,7 @@ function Textfield(props) {
             <EditBtn />
           </button>
         </div>
-      </fieldset>
+      </div>
     );
   }
 }

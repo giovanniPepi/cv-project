@@ -59,7 +59,6 @@ class App extends Component {
           <header className="header">
             <h2>CV Generator</h2>
           </header>
-          <h3 className="sectionTitle">General</h3>
           <Personal />
 
           <h3 className="sectionTitle">

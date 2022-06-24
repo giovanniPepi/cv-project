@@ -87,7 +87,8 @@ h2 {
 .personalForm,
 .skillForm,
 .experienceForm,
-.educationForm {
+.educationForm,
+.textfield {
   display: flex;
   align-self: center;
   flex-direction: column;
@@ -132,18 +133,12 @@ label {
   align-self: center;
 }
 
-.textfield {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--outerGap);
-}
-
 .textAboutMe {
   height: 7vh;
 }
 
-.labelAbout {
+.labelAbout,
+.goal {
   display: flex;
   flex-direction: column;
   align-self: stretch;
@@ -168,22 +163,32 @@ label {
   margin-bottom: 1rem;
 }
 
-.goal {
-  max-width: 30vw;
-}
-
-.textfield {
-  padding: var(--innerPadding);
-}
-.top {
+/* .top {
   display: flex;
   flex-direction: column;
 }
+ */
 .personalInputWrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
+.first {
+  align-self: center;
+}
 #ageInpt {
   max-width: 25px;
+}
+
+.topInfoWrapper {
+  display: flex;
+}
+
+.textfieldWrapper {
+  align-self: center;
+}
+
+.top {
+  max-width: 80vw;
 }
