@@ -97,6 +97,9 @@ h2 {
   gap: var(--innerGap);
   padding: var(--outerPadding);
 }
+.textfield {
+  max-width: 80vw;
+}
 .skillForm {
   flex-direction: row;
   align-items: center;
@@ -187,8 +190,4 @@ label {
 
 .textfieldWrapper {
   align-self: center;
-}
-
-.top {
-  max-width: 80vw;
 }
