@@ -94,18 +94,17 @@ class Experience extends Component {
           </label>
         </div>
 
-        <div className="innerFormDiv">
-          <label htmlFor="description">
-            <p>Description</p>
-            <textarea
-              type="text"
-              className="textAboutMe"
-              name="description"
-              value={description}
-              onChange={this.handleChange}
-            />
-          </label>
+        <div className="labelAbout">
+          <p>Description</p>
+          <textarea
+            type="text"
+            className="textAboutMe"
+            name="description"
+            value={description}
+            onChange={this.handleChange}
+          />
         </div>
+
         <div className="btnContainer">
           <button className="formBtn experienceBtn" type="submit">
             <SaveBtn />

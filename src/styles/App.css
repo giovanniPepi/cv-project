@@ -89,15 +89,12 @@ h2 {
 .experienceForm,
 .educationForm {
   display: flex;
+  align-self: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: var(--innerGap);
   padding: var(--outerPadding);
-}
-.personalForm {
-  align-items: center;
-  align-self: center;
 }
 .skillForm {
   flex-direction: row;
@@ -109,7 +106,7 @@ h2 {
   align-content: space-between;
   gap: var(--outerGap);
   padding: var(--miniPadding);
-  /*   min-width: 45vw; */
+  align-self: stretch;
 }
 label {
   display: flex;
@@ -120,23 +117,14 @@ label {
 }
 .btnContainer {
   display: flex;
+  padding: 0.2rem;
 }
 
-@media screen and (min-width: 1060px) {
-  .skillForm {
-    flex-direction: row;
-  }
-  .skillsbtncontainer {
-    align-self: flex-end;
-  }
+.skillForm {
+  flex-direction: column;
 }
-@media screen and (max-width: 1060px) {
-  .skillForm {
-    flex-direction: column;
-  }
-  .skillsbtncontainer {
-    align-self: center;
-  }
+.skillsbtncontainer {
+  align-self: center;
 }
 
 .addBtn {
@@ -199,10 +187,3 @@ label {
 #ageInpt {
   max-width: 25px;
 }
-
-/*Forces it to stay the same size as the div on mobile/PC*/
-/* #nameInpt,
-#locationInpt {
-  max-width: clamp(88px, 160px, 20vw);
-}
- */
