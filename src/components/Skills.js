@@ -1,4 +1,3 @@
-import Icon from "@mdi/react";
 import React, { Component } from "react";
 import DeleteBtn from "./DeleteBtn";
 import SaveBtn from "./SaveBtn";

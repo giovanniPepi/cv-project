@@ -60,7 +60,6 @@ class App extends Component {
             <h2>CV Generator</h2>
           </header>
           <Personal />
-
           <h4 className="sectionTitle">
             <p className="pTitle">Skills</p>
             <button
@@ -71,7 +70,6 @@ class App extends Component {
             </button>
           </h4>
           {skills}
-
           <h4 className="sectionTitle">
             <p className="pTitle">Experience</p>
             <button
@@ -82,7 +80,6 @@ class App extends Component {
             </button>
           </h4>
           {experiences}
-
           <h4 className="sectionTitle">
             <p className="pTitle">Education</p>
             <button
@@ -93,7 +90,6 @@ class App extends Component {
             </button>
           </h4>
           {educations}
-
           <button
             onClick={() => {
               window.print();
