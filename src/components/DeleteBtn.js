@@ -8,8 +8,7 @@ class DeleteBtn extends Component {
     this.state = {
       path: mdiDelete,
       color: "red",
-      size: 1,
-      spin: 5,
+      size: 0.8,
     };
   }
 

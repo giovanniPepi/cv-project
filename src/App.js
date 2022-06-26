@@ -61,37 +61,37 @@ class App extends Component {
           </header>
           <Personal />
 
-          <h3 className="sectionTitle">
-            Skills
+          <h4 className="sectionTitle">
+            <p className="pTitle">Skills</p>
             <button
               className="addBtn"
               onClick={() => this.handleClick("skillsIds")}
             >
               <AddBtn />
             </button>
-          </h3>
+          </h4>
           {skills}
 
-          <h3 className="sectionTitle">
-            Experience
+          <h4 className="sectionTitle">
+            <p className="pTitle">Experience</p>
             <button
               className="addBtn"
               onClick={() => this.handleClick("experienceIds")}
             >
               <AddBtn />
             </button>
-          </h3>
+          </h4>
           {experiences}
 
-          <h3 className="sectionTitle">
-            Education
+          <h4 className="sectionTitle">
+            <p className="pTitle">Education</p>
             <button
               className="addBtn"
               onClick={() => this.handleClick("educationIds")}
             >
               <AddBtn />
             </button>
-          </h3>
+          </h4>
           {educations}
 
           <button
@@ -101,6 +101,9 @@ class App extends Component {
             className="addBtn printBtn"
           >
             <PreviewBtn />
+            <p>
+              <strong>Preview/PDF</strong>
+            </p>
           </button>
         </section>
       </main>

@@ -8,8 +8,7 @@ class AddBtn extends Component {
     this.state = {
       path: mdiPlusThick,
       color: "#22C55E",
-      size: 1,
-      spin: 1,
+      size: 0.8,
     };
   }
 

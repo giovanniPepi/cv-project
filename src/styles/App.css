@@ -17,12 +17,12 @@
   --purple5: #a855f7;
   --indigo5: #6366f1;
   --blue5: #3b82f6;
-  --outerGap: 1rem;
-  --innerGap: 0.5rem;
+  --outerGap: 0.5rem;
+  --innerGap: 0.3rem;
   --miniGap: 0.3rem;
-  --miniPadding: 0.3rem;
+  --miniPadding: 0.2rem;
   --outerPadding: 0.5rem;
-  --innerPadding: 1rem;
+  --innerPadding: 0.5rem;
   --borders: 1px dotted black;
 }
 
@@ -65,6 +65,7 @@ input {
 li {
   max-width: 60vw;
   word-wrap: break-word;
+  margin-left: 1rem;
 }
 
 .mainSection {
@@ -85,7 +86,10 @@ h2 {
 }
 .sectionTitle {
   align-self: center;
+  margin: 0.4rem 0 0.4rem 0;
   display: flex;
+  align-content: center;
+  justify-content: center;
   gap: var(--miniGap);
 }
 .personalForm,
@@ -145,7 +149,8 @@ label {
 }
 
 .labelAbout,
-.goal {
+.goal,
+.description {
   display: flex;
   flex-direction: column;
   align-self: stretch;
@@ -170,11 +175,6 @@ label {
   margin-bottom: 1rem;
 }
 
-/* .top {
-  display: flex;
-  flex-direction: column;
-}
- */
 .personalInputWrapper {
   display: flex;
   flex-direction: column;
@@ -198,14 +198,46 @@ label {
 
 .skill {
   flex-direction: row;
+  align-self: center;
   max-width: 70vw;
+  padding: 0;
 }
 .company {
   display: flex;
-  align-self: flex-start;
+  align-self: center;
+}
+.printBtn {
+  margin-top: 2rem;
+  align-self: center;
 }
 
-.description {
-  word-wrap: break-word;
-  max-width: 70vw;
+@media print {
+  .formBtn,
+  .addBtn,
+  .header {
+    display: none;
+  }
+  .textfield,
+  .company,
+  .sectionTitle {
+    align-self: flex-start;
+  }
+}
+
+.goal {
+  padding-left: 0;
+  align-self: center;
+}
+
+.top {
+  align-self: center;
+}
+
+.pTitle {
+  align-self: center;
+  font-size: 1.2rem;
+}
+.exp {
+  padding: 0;
+  gap: 0;
 }

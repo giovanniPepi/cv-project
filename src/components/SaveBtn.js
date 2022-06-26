@@ -8,8 +8,7 @@ class SaveBtn extends Component {
     this.state = {
       path: mdiContentSaveOutline,
       color: "blue",
-      size: 1,
-      spin: 2,
+      size: 0.8,
     };
   }
 

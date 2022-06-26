@@ -8,8 +8,7 @@ class EditBtn extends Component {
     this.state = {
       path: mdiPencilOutline,
       color: "purple",
-      size: 1,
-      spin: 10,
+      size: 0.8,
     };
   }
 

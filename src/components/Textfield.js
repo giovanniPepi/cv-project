@@ -9,7 +9,7 @@ function Textfield(props) {
           <img
             src={props.img}
             alt={"profile"}
-            width={"200px"}
+            width={"100px"}
             height={"100%"}
           ></img>
         </div>
@@ -30,9 +30,7 @@ function Textfield(props) {
             </div>
           ) : null}
         </div>
-        <div className="sectionTitle">
-          <h3 className="sectionTitle">Goal:</h3>
-        </div>
+        <h4 className="sectionTitle goal">Goal</h4>
         <div className="textfieldWrapper goal">{props.aboutMe}</div>
         <div>
           <button className="formBtn editBtn" onClick={props.handleEdit}>
@@ -67,7 +65,7 @@ function Textfield(props) {
     );
   } else if (props.company) {
     return (
-      <div className="textfield">
+      <div className="textfield exp">
         <div className="textfieldWrapper company">
           <div className="company">
             <strong>{props.company}</strong>- {props.position}
@@ -107,7 +105,7 @@ function Textfield(props) {
     );
   } else if (props.institution) {
     return (
-      <div className="textfield">
+      <div className="textfield exp">
         <div>
           <strong>{props.title}</strong> - {props.institution}
         </div>

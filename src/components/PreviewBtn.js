@@ -8,8 +8,7 @@ class PreviewBtn extends Component {
     this.state = {
       path: mdiPrinterEye,
       color: "orange",
-      size: 1,
-      spin: 20,
+      size: 2,
     };
   }
 

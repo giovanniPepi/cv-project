@@ -99,7 +99,7 @@ class Personal extends Component {
               <img
                 src={img}
                 alt={"profile"}
-                width={"200px"}
+                width={"100px"}
                 height={"100%"}
               ></img>
               <button
@@ -128,6 +128,7 @@ class Personal extends Component {
                 placeholder="John Smith"
                 value={name}
                 onChange={this.handleChange}
+                required
               />
             </label>
 
@@ -211,7 +212,7 @@ class Personal extends Component {
         </div>
 
         <div className="labelAbout">
-          <h4 className="sectionTitle">Goal</h4>
+          <h4 className="sectionTitle toptitle">Goal</h4>
           <textarea
             className="textAboutMe"
             name="aboutMe"
