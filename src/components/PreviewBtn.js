@@ -1,22 +1,17 @@
 import { mdiPrinterEye } from "@mdi/js";
 import Icon from "@mdi/react";
-import { Component } from "react";
+import { useState } from "react";
 
-class PreviewBtn extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      path: mdiPrinterEye,
-      color: "orange",
-      size: 2,
-    };
-  }
+const PreviewBtn = () => {
+  const [btnInfo, setBtnInfo] = useState({
+    path: mdiPrinterEye,
+    color: "orange",
+    size: 2,
+  });
 
-  render() {
-    const { path, color, size, spin } = this.state;
+  const { path, color, size, spin } = btnInfo;
 
-    return <Icon path={path} size={size} color={color} spin={spin} />;
-  }
-}
+  return <Icon path={path} size={size} color={color} spin={spin} />;
+};
 
 export default PreviewBtn;

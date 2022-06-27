@@ -219,7 +219,8 @@ label {
   }
   .textfield,
   .company,
-  .sectionTitle {
+  .sectionTitle,
+  .exp {
     align-self: flex-start;
   }
 }

@@ -106,7 +106,7 @@ function Textfield(props) {
   } else if (props.institution) {
     return (
       <div className="textfield exp">
-        <div>
+        <div className="company">
           <strong>{props.title}</strong> - {props.institution}
         </div>
 

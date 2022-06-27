@@ -1,22 +1,23 @@
 import { mdiPlusThick } from "@mdi/js";
 import Icon from "@mdi/react";
-import { Component } from "react";
+import { useState } from "react";
 
-class AddBtn extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      path: mdiPlusThick,
-      color: "#22C55E",
-      size: 0.8,
+const AddBtn = () => {
+  /* this.state = {
+      path: ,
+      
     };
-  }
+   */
 
-  render() {
-    const { path, color, size, spin } = this.state;
+  const [btninfo, setBtnInfo] = useState({
+    path: mdiPlusThick,
+    color: "#22C55E",
+    size: 0.8,
+  });
 
-    return <Icon path={path} size={size} color={color} spin={spin} />;
-  }
-}
+  const { path, color, size, spin } = btninfo;
+
+  return <Icon path={path} size={size} color={color} spin={spin} />;
+};
 
 export default AddBtn;

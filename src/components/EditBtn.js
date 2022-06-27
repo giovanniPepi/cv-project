@@ -1,22 +1,17 @@
 import { mdiPencilOutline } from "@mdi/js";
 import Icon from "@mdi/react";
-import { Component } from "react";
+import { useState } from "react";
 
-class EditBtn extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      path: mdiPencilOutline,
-      color: "purple",
-      size: 0.8,
-    };
-  }
+const EditBtn = () => {
+  const [btnInfo, setBtnInfo] = useState({
+    path: mdiPencilOutline,
+    color: "purple",
+    size: 0.8,
+  });
 
-  render() {
-    const { path, color, size, spin } = this.state;
+  const { path, color, size, spin } = btnInfo;
 
-    return <Icon path={path} size={size} color={color} spin={spin} />;
-  }
-}
+  return <Icon path={path} size={size} color={color} spin={spin} />;
+};
 
 export default EditBtn;

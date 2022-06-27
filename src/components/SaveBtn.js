@@ -1,22 +1,17 @@
 import { mdiContentSaveOutline } from "@mdi/js";
 import Icon from "@mdi/react";
-import { Component } from "react";
+import { useState } from "react";
 
-class SaveBtn extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      path: mdiContentSaveOutline,
-      color: "blue",
-      size: 0.8,
-    };
-  }
+const SaveBtn = () => {
+  const [btnInfo, setBtnInfo] = useState({
+    path: mdiContentSaveOutline,
+    color: "blue",
+    size: 0.8,
+  });
 
-  render() {
-    const { path, color, size, spin } = this.state;
+  const { path, color, size, spin } = btnInfo;
 
-    return <Icon path={path} size={size} color={color} spin={spin} />;
-  }
-}
+  return <Icon path={path} size={size} color={color} spin={spin} />;
+};
 
 export default SaveBtn;

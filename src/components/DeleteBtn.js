@@ -1,29 +1,31 @@
 import { mdiDelete } from "@mdi/js";
 import Icon from "@mdi/react";
-import { Component } from "react";
+import { useState } from "react";
 
-class DeleteBtn extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+const DeleteBtn = (newSize) => {
+  /*   this.state = {
       path: mdiDelete,
       color: "red",
       size: 0.8,
     };
-  }
+   */
 
-  render() {
-    const { path, color, size, spin } = this.state;
+  const [btnInfo, setBtnInfo] = useState({
+    path: mdiDelete,
+    color: "red",
+    size: 0.8,
+  });
 
-    // accepts new sizes
-    if (this.props.newSize) {
-      return (
-        <Icon path={path} size={this.props.newSize} color={color} spin={spin} />
-      );
-    } else {
-      return <Icon path={path} size={size} color={color} spin={spin} />;
-    }
+  const { path, color, size, spin } = btnInfo;
+
+  // accepts new sizes
+  if (btnInfo.newSize) {
+    return (
+      <Icon path={path} size={this.props.newSize} color={color} spin={spin} />
+    );
+  } else {
+    return <Icon path={path} size={size} color={color} spin={spin} />;
   }
-}
+};
 
 export default DeleteBtn;
