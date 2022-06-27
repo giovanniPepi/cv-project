@@ -1,88 +1,78 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import DeleteBtn from "./DeleteBtn";
 import SaveBtn from "./SaveBtn";
 import Textfield from "./Textfield";
 
-class Skills extends Component {
-  constructor(props) {
-    super(props);
+const Skills = (props) => {
+  const [editMode, setEditMode] = useState(true);
+  const [skillInfo, setSkillInfo] = useState({
+    skill: "",
+    description: "",
+  });
 
-    this.state = {
-      editMode: true,
-      skill: "",
-      description: "",
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(e) {
+  const handleChange = (e) => {
     const { name, value } = e.target;
-    this.setState({ [name]: value });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    this.setState((prevState) => {
-      return { editMode: !prevState.editMode };
+    setSkillInfo((prevInfo) => {
+      return { ...prevInfo, [name]: value };
     });
-  }
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setEditMode((prevState) => !prevState);
+  };
 
-  render() {
-    const { editMode, skill, description } = this.state; //destructuring
-    const { id, handleDelete } = this.props; // receives from App
+  const { skill, description } = skillInfo; //destructuring
+  const { id, handleDelete } = props; // receives from App
 
-    // text returned when input is saved
-    if (!editMode) {
-      return (
-        <Textfield
-          skill={skill}
-          description={description}
-          handleEdit={this.handleSubmit}
-        />
-      );
-    }
-
+  // text returned when input is saved
+  if (!editMode) {
     return (
-      <form className="skillForm" action="" onSubmit={this.handleSubmit}>
-        <div className="innerFormDiv">
-          <label htmlFor="skill">
-            <p>Skill</p>
-            <input
-              type="text"
-              name="skill"
-              value={skill}
-              onChange={this.handleChange}
-              required
-            />
-          </label>
-
-          <label htmlFor="description">
-            <p>Description</p>
-            <input
-              type="text"
-              name="description"
-              value={description}
-              onChange={this.handleChange}
-            />
-          </label>
-        </div>
-        <div className="btnContainer skillsbtncontainer">
-          <button className="formBtn skillsBtn" type="submit">
-            <SaveBtn />
-          </button>
-          <button
-            className="formBtn"
-            type="button"
-            onClick={() => handleDelete("skillsIds", id)}
-          >
-            <DeleteBtn />
-          </button>
-        </div>
-      </form>
+      <Textfield
+        skill={skill}
+        description={description}
+        handleEdit={handleSubmit}
+      />
     );
   }
-}
+
+  return (
+    <form className="skillForm" action="" onSubmit={handleSubmit}>
+      <div className="innerFormDiv">
+        <label htmlFor="skill">
+          <p>Skill</p>
+          <input
+            type="text"
+            name="skill"
+            value={skill}
+            onChange={handleChange}
+            required
+          />
+        </label>
+
+        <label htmlFor="description">
+          <p>Description</p>
+          <input
+            type="text"
+            name="description"
+            value={description}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
+      <div className="btnContainer skillsbtncontainer">
+        <button className="formBtn skillsBtn" type="submit">
+          <SaveBtn />
+        </button>
+        <button
+          className="formBtn"
+          type="button"
+          onClick={() => handleDelete("skillsIds", id)}
+        >
+          <DeleteBtn />
+        </button>
+      </div>
+    </form>
+  );
+};
 
 export default Skills;
