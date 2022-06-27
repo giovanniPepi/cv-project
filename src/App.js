@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { useState } from "react";
 import uniqid from "uniqid";
 import Personal from "./components/Personal";
 import Skills from "./components/Skills";
@@ -8,103 +8,101 @@ import style from "./styles/App.css";
 import AddBtn from "./components/AddBtn";
 import PreviewBtn from "./components/PreviewBtn";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      skillsIds: [],
-      experienceIds: [],
-      educationIds: [],
-    };
-
-    this.handleClick = this.handleClick.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
-  }
+function App() {
+  const [skillsIds, setSkillsIds] = useState([]);
+  const [experienceIds, setExperienceIds] = useState([]);
+  const [educationIds, setEducationIds] = useState([]);
 
   // creates a new instace of the element inside the state, which is then rendered
-  handleClick(type) {
-    this.setState((prevState) => {
-      return {
-        [type]: [...prevState[type], uniqid()],
-      };
-    });
-  }
+  const handleClick = (type) => {
+    if (type === "experienceIds") {
+      setExperienceIds((prevExpIds) => [...prevExpIds, uniqid()]);
+    } else if (type === "skillsIds") {
+      setSkillsIds((prevSkillsIds) => [...prevSkillsIds, uniqid()]);
+    } else {
+      setEducationIds((prevEducationIds) => [...prevEducationIds, uniqid()]);
+    }
+  };
 
-  handleDelete(type, id) {
-    this.setState((prevState) => {
-      let filtered = prevState[type].filter((key) => key !== id);
-      return {
-        [type]: filtered,
-      };
-    });
-  }
+  const handleDelete = (type, id) => {
+    if (type === "experienceIds") {
+      setExperienceIds((prevExpIds) => {
+        let newlist = prevExpIds.filter((key) => key !== id);
+        return newlist;
+      });
+    } else if (type === "skillsIds") {
+      setSkillsIds((prevSkillsIds) => {
+        let newlist = prevSkillsIds.filter((key) => key !== id);
+        return newlist;
+      });
+    } else {
+      setEducationIds((prevEducationIds) => {
+        let newlist = prevEducationIds.filter((key) => key !== id);
+        return newlist;
+      });
+    }
+  };
 
-  render() {
-    const skills = this.state.skillsIds.map((id) => (
-      <Skills key={id} id={id} handleDelete={this.handleDelete} />
-    ));
+  const skills = skillsIds.map((id) => (
+    <Skills key={id} id={id} handleDelete={handleDelete} />
+  ));
 
-    const experiences = this.state.experienceIds.map((id) => (
-      <Experience key={id} id={id} handleDelete={this.handleDelete} />
-    ));
+  const experiences = experienceIds.map((id) => (
+    <Experience key={id} id={id} handleDelete={handleDelete} />
+  ));
 
-    const educations = this.state.educationIds.map((id) => (
-      <Education key={id} id={id} handleDelete={this.handleDelete} />
-    ));
+  const educations = educationIds.map((id) => (
+    <Education key={id} id={id} handleDelete={handleDelete} />
+  ));
 
-    return (
-      <main className="App" id="mainForm">
-        <section className="mainSection">
-          <header className="header">
-            <h2>CV Generator</h2>
-          </header>
-          <Personal />
-          <h4 className="sectionTitle">
-            <p className="pTitle">Skills</p>
-            <button
-              className="addBtn"
-              onClick={() => this.handleClick("skillsIds")}
-            >
-              <AddBtn />
-            </button>
-          </h4>
-          {skills}
-          <h4 className="sectionTitle">
-            <p className="pTitle">Experience</p>
-            <button
-              className="addBtn"
-              onClick={() => this.handleClick("experienceIds")}
-            >
-              <AddBtn />
-            </button>
-          </h4>
-          {experiences}
-          <h4 className="sectionTitle">
-            <p className="pTitle">Education</p>
-            <button
-              className="addBtn"
-              onClick={() => this.handleClick("educationIds")}
-            >
-              <AddBtn />
-            </button>
-          </h4>
-          {educations}
-          <button
-            onClick={() => {
-              window.print();
-            }}
-            className="addBtn printBtn"
-          >
-            <PreviewBtn />
-            <p>
-              <strong>Preview/PDF</strong>
-            </p>
+  return (
+    <main className="App" id="mainForm">
+      <section className="mainSection">
+        <header className="header">
+          <h2>CV Generator</h2>
+        </header>
+        <Personal />
+        <h4 className="sectionTitle">
+          <p className="pTitle">Skills</p>
+          <button className="addBtn" onClick={() => handleClick("skillsIds")}>
+            <AddBtn />
           </button>
-        </section>
-      </main>
-    );
-  }
+        </h4>
+        {skills}
+        <h4 className="sectionTitle">
+          <p className="pTitle">Experience</p>
+          <button
+            className="addBtn"
+            onClick={() => handleClick("experienceIds")}
+          >
+            <AddBtn />
+          </button>
+        </h4>
+        {experiences}
+        <h4 className="sectionTitle">
+          <p className="pTitle">Education</p>
+          <button
+            className="addBtn"
+            onClick={() => handleClick("educationIds")}
+          >
+            <AddBtn />
+          </button>
+        </h4>
+        {educations}
+        <button
+          onClick={() => {
+            window.print();
+          }}
+          className="addBtn printBtn"
+        >
+          <PreviewBtn />
+          <p>
+            <strong>Preview/PDF</strong>
+          </p>
+        </button>
+      </section>
+    </main>
+  );
 }
 
 export default App;
