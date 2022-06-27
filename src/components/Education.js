@@ -1,112 +1,95 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
 import Textfield from "./Textfield";
 import DeleteBtn from "./DeleteBtn";
 import SaveBtn from "./SaveBtn";
 
-class Education extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      editMode: true,
-      title: "",
-      institution: "",
-      from: "",
-      to: "",
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+const Education = (props) => {
+  const [editMode, setEditMode] = useState(true);
+  const [educationInfo, setEducationInfo] = useState({
+    title: "",
+    institution: "",
+    from: "",
+    to: "",
+  });
 
-  handleChange(e) {
+  const handleChange = (e) => {
     const { name, value } = e.target;
-    this.setState({ [name]: value });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    this.setState((prevState) => {
-      return { editMode: !prevState.editMode };
+    setEducationInfo((previInfo) => {
+      return { ...previInfo, [name]: value };
     });
-  }
+  };
 
-  render() {
-    const { editMode, title, institution, from, to } = this.state;
-    const { id, handleDelete } = this.props;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setEditMode((prevMode) => !prevMode);
+  };
 
-    if (!editMode) {
-      return (
-        <Textfield
-          title={title}
-          institution={institution}
-          from={from}
-          to={to}
-          handleEdit={this.handleSubmit}
-        />
-      );
-    }
+  const { title, institution, from, to } = educationInfo;
+  const { id, handleDelete } = props;
 
+  if (!editMode) {
     return (
-      <form className="educationForm" action="" onSubmit={this.handleSubmit}>
-        <div className="innerFormDiv">
-          <label htmlFor="title">
-            <p>Degree</p>
-            <input
-              type="text"
-              name="title"
-              value={title}
-              onChange={this.handleChange}
-              required
-            />
-          </label>
-
-          <label htmlFor="institution">
-            <p>Institution</p>
-            <input
-              type="text"
-              name="institution"
-              value={institution}
-              onChange={this.handleChange}
-            />
-          </label>
-        </div>
-
-        <div className="innerFormDiv">
-          <label htmlFor="from">
-            <p>From</p>
-            <input
-              type="date"
-              name="from"
-              value={from}
-              onChange={this.handleChange}
-            />
-          </label>
-
-          <label htmlFor="to">
-            <p>To</p>
-            <input
-              type="date"
-              name="to"
-              value={to}
-              onChange={this.handleChange}
-            />
-          </label>
-        </div>
-        <div className="btnContainer">
-          <button className="formBtn">
-            <SaveBtn />
-          </button>
-          <button
-            className="formBtn"
-            type="button"
-            onClick={() => handleDelete("educationIds", id)}
-          >
-            <DeleteBtn />
-          </button>
-        </div>
-      </form>
+      <Textfield
+        title={title}
+        institution={institution}
+        from={from}
+        to={to}
+        handleEdit={handleSubmit}
+      />
     );
   }
-}
+
+  return (
+    <form className="educationForm" action="" onSubmit={handleSubmit}>
+      <div className="innerFormDiv">
+        <label htmlFor="title">
+          <p>Degree</p>
+          <input
+            type="text"
+            name="title"
+            value={title}
+            onChange={handleChange}
+            required
+          />
+        </label>
+
+        <label htmlFor="institution">
+          <p>Institution</p>
+          <input
+            type="text"
+            name="institution"
+            value={institution}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
+
+      <div className="innerFormDiv">
+        <label htmlFor="from">
+          <p>From</p>
+          <input type="date" name="from" value={from} onChange={handleChange} />
+        </label>
+
+        <label htmlFor="to">
+          <p>To</p>
+          <input type="date" name="to" value={to} onChange={handleChange} />
+        </label>
+      </div>
+      <div className="btnContainer">
+        <button className="formBtn">
+          <SaveBtn />
+        </button>
+        <button
+          className="formBtn"
+          type="button"
+          onClick={() => handleDelete("educationIds", id)}
+        >
+          <DeleteBtn />
+        </button>
+      </div>
+    </form>
+  );
+};
 
 export default Education;

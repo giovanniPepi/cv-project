@@ -8,7 +8,7 @@ import style from "./styles/App.css";
 import AddBtn from "./components/AddBtn";
 import PreviewBtn from "./components/PreviewBtn";
 
-function App() {
+const App = () => {
   const [skillsIds, setSkillsIds] = useState([]);
   const [experienceIds, setExperienceIds] = useState([]);
   const [educationIds, setEducationIds] = useState([]);
@@ -103,6 +103,6 @@ function App() {
       </section>
     </main>
   );
-}
+};
 
 export default App;
